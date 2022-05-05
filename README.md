@@ -15,3 +15,15 @@
 ###     <li> Update: Update your arsenal before fight. 
 ###     <li>Delete: Delete your player. 
 </ol>
+
+  &nbsp;
+### **CHECK OUT MORE ON [TRELLO](https://trello.com/b/7USVKxhU/arsenal)**
+
+ ## ***Technologies***
+ * HTML
+ * CSS
+* REACT
+* NODE
+* EXPRESS
+* POSTRESQL
+* HEROKU
