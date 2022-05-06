@@ -9,7 +9,7 @@
 &nbsp;
 
 ### **About:** :crossed_swords: :crossed_swords: :crossed_swords: :crossed_swords: 
-A mobile game in which two players attempt to defeat each other by decreasing opponent's arsenal points to 0. Before entering fight arena, player must buy weapons in order to be able to fight, once in the arena, player can no longer access weapons marketplace(so purchase and build your arsenal wisely). Players must strategize to defeat their opponet as they take turns fighting with weapons. WARNING: Once defeated, winner keeps loser's weapon. Purchase wisely. 
+A mobile game in which two players attempt to defeat each other by decreasing opponent's arsenal points to 0. Before entering fight arena, player must choose 2 weapons in order to be able to fight, once in the arena, player can no longer access weapons marketplace(so build your arsenal wisely). Players must strategize to defeat their opponet as they take turns fighting with weapons. WARNING: Once defeated, winner keeps loser's weapon. Choose wisely. 
 
 ### **Playing Instructions:** :gun: :bow_and_arrow: :axe: 	:crossed_swords:
 <ol>
