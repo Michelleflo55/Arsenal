@@ -8,32 +8,35 @@
 </h1>
 &nbsp;
 
-### **About:**
+### **About:** :crossed_swords: :crossed_swords: :crossed_swords: :crossed_swords: 
 A mobile game in which two players attempt to defeat each other by decreasing opponent's arsenal points to 0. Before entering fight arena, player must buy weapons in order to be able to fight, once in the arena, player can no longer access weapons marketplace(so purchase and build your arsenal wisely). Players must strategize to defeat their opponet as they take turns fighting with weapons. WARNING: Once defeated, winner keeps loser's weapon. Purchase wisely. 
 
 ### **Playing Instructions:** :gun: :bow_and_arrow: :axe: 	:crossed_swords:
 <ol>
-<li> 
-
+<li> Choose your character
+<li> Add weapons into your arcenal. If you don't like the weapons, create your own. 
+<li> Enter Arena
+<li> May the player with the best arsenal win!
 </ol>
 
 ### **MVP:**  
 <ol>
 
-###     <li>Create: Create an arsenal of weapons before you enter arena
-###     <li>Read:   View weapons in your arsenal. 
-###     <li> Update: Update your arsenal before fight. 
-###     <li>Delete: Delete your player. 
+###     <li>Create: Player has ability to create a weapon
+###     <li>Read:   View weapons in Weapons Model that player and other users have created
+###     <li> Update: Update the weapon player created 
+###     <li>Delete: Delete weapon you created 
 </ol>
 
   &nbsp;
 ### **CHECK OUT MORE ON [TRELLO](https://trello.com/b/7USVKxhU/arsenal)**
 
  ## ***Technologies***
- * HTML
- * CSS
-* REACT
-* NODE
-* EXPRESS
-* POSTRESQL
-* HEROKU
+  * HTML
+  * CSS
+  * REACT
+  * NODE
+  * EXPRESS
+  * POSTRESQL
+  * HEROKU
+
