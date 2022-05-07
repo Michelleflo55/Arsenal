@@ -8,6 +8,10 @@
     "start": "node app.js",
     "build": "npm install && npx sequelize-cli db:migrate"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michelleflo55/Arsenal.git"
+  },  
   "keywords": [],
   "author": "",
   "license": "ISC",
