@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       Choose_weapons.belongsToMany(models.Player, {
         through: models.My_arsenal,
         as: 'weapons',
-        foreignKey: 'choose_weponsId'
+        foreignKey: 'choose_weaponsId'
       })
     }
   }

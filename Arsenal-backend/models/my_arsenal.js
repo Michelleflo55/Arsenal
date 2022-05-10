@@ -10,11 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      My_arsenal.belongsToMany(models.Player, {foreignKey: 'playerId'})
+      
     }
   }
   My_arsenal.init({
-    weaponId: {
+    choose_weaponsId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
