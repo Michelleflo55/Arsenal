@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      My_arsenal.belongsToMany(models.Player, )
     }
   }
   My_arsenal.init({
@@ -29,8 +29,16 @@ module.exports = (sequelize, DataTypes) => {
         model: 'fighter',
         key: 'id'
       }
-    }
-  }, {
+    },
+    fighterId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'fighter',
+        key: 'id'
+      }
+    }, 
+    {
     sequelize,
     modelName: 'My_arsenal',
     tableName: 'my_arsenals'

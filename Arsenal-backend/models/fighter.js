@@ -10,7 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Fighter.hasMany(models.ChooseWeapons, {foreignKey: 'fighterId'})
+      Fighter.hasMany(models.ChooseWeapons, {
+        as: 'arsenal',
+        through: models.My_arsenal,
+        foreignKey: 'characterId'
+      })
     }
   }
   Fighter.init({

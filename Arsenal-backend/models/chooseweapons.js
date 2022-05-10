@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Choose_weapons.belongsTo(models.Fighter, {foreignKey: 'weapons'})
+      Choose_weapons.belongsTo(models.Fighter, {foreignKey: 'fighterId'})
     }
   }
-  ChooseWeapons.init({
+  Choose_weapons.init({
     name: DataTypes.STRING,
     speed: DataTypes.INTEGER,
     power: DataTypes.INTEGER,

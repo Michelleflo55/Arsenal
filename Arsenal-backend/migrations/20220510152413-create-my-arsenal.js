@@ -14,6 +14,9 @@ module.exports = {
       playerId: {
         type: Sequelize.INTEGER
       },
+      fighterId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
