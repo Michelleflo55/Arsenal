@@ -3,14 +3,14 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class ChooseWeapons extends Model {
+  class Choose_weapons extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      ChooseWeapons.belongsTo(models.Fighter, {foreignKey: 'weapons'})
+      Choose_weapons.belongsTo(models.Fighter, {foreignKey: 'weapons'})
     }
   }
   ChooseWeapons.init({
@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     damageLevel:DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'ChooseWeapons',
-    tableName: 'chooseWeapons'
+    modelName: 'Choose_weapons',
+    tableName: 'choose_weapons'
   });
-  return ChooseWeapons;
+  return Choose_weapons;
 }

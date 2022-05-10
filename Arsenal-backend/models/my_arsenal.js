@@ -14,8 +14,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   My_arsenal.init({
-    weaponId: DataTypes.INTEGER,
-    playerId: DataTypes.INTEGER
+    weaponId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'choose_weapons',
+        key: 'id'
+      }
+    },
+    playerId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'fighter',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'My_arsenal',
