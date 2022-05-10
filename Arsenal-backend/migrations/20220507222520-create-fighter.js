@@ -17,6 +17,9 @@ module.exports = {
       health: {
         type: Sequelize.INTEGER
       },
+      playerId: {
+        type: Sequelize.INTEGER
+      },
       weaponsId: {
         type: Sequelize.INTEGER
       },
