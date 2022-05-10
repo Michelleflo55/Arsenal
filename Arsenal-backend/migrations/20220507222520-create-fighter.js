@@ -18,7 +18,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       playerId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'players',
+          key: 'id'
+        }
       },
       weaponsId: {
         type: Sequelize.INTEGER
