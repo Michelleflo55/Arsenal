@@ -9,6 +9,15 @@ const GetWeapons = async ( req, res ) => {
     }
 }
 
+const GetWeapon = async ( req, res ) => {
+    try {
+      const weapon = await Choose_weapons.findByPk( req.params.id)
+      res.send(weapon)  
+    } catch (error) {
+       throw(error) 
+    }
+}
+
 const CreateWeapon = async ( req, res ) => {
     try {
         const newWeapon = await Choose_weapons.create(req.body) 
@@ -31,9 +40,21 @@ const UpdateWeapon = async ( req, res ) => {
        throw(error) 
     }
 }
+
+const DeleteWeapon = async ( req, res ) => {
+    try {
+        let weaponId = parseInt(req.params.id)
+        await Choose_weapons.destroy({where: { id: weaponId }})
+        res.send({ message: `Weapon ${weaponId} has been destroyed` })
+    } catch (error) {
+        throw(error)
+    }
+}
 module.exports = {
     GetWeapons,
+    GetWeapon,
     CreateWeapon,
-    UpdateWeapon
+    UpdateWeapon,
+    DeleteWeapon
 
 }
