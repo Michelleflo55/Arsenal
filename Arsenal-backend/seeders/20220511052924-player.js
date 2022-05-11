@@ -1,12 +1,8 @@
 'use strict';
 const falso = require('@ngneat/falso');
 
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-
-    const fighters = await Fighter.findAll({ raw:true })
-
 
     const players = [...Array(5)].map((a) => ({
       username: falso.randUserName(),

@@ -18,7 +18,7 @@ const GetPlayer = async ( req, res ) => {
     }
 }
 
-module.exports ={
+module.exports = {
     GetPlayers,
     GetPlayer
 }
