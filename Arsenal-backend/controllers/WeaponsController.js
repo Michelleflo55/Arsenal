@@ -1,3 +1,4 @@
+const { INTEGER } = require('sequelize/types')
 const { Choose_weapons } = require('../models')
 
 const GetWeapons = async ( req, res ) => {
@@ -9,6 +10,21 @@ const GetWeapons = async ( req, res ) => {
     }
 }
 
+const CreateWeapon = async ( req, res ) => {
+    try {
+        const newWeapon = await Choose_weapons.Create({
+           name: '',
+           speed: int,
+           power: ,
+           image: '',
+           damageLevel:  
+        }) 
+        res.send(newWeapon) 
+    } catch (error) {
+        throw(error)
+    }
+}
 module.exports = {
-    GetWeapons
+    GetWeapons,
+    CreateWeapon
 }

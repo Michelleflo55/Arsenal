@@ -32,6 +32,20 @@ const stringify = (data) => {
     }
   } 
 
+  const createWeapon = async () => {
+    try {
+      const newWeapon = await Choose_weapons.create({
+        name: 'bat',
+        speed: 5,
+        power: 4,
+        image: 'https.com',
+        damageLevel: 10 
+      })
+      stringify(newWeapon)
+    } catch (error) {
+      throw(error)
+    }
+  }
 
 
 
@@ -41,7 +55,8 @@ const stringify = (data) => {
       try {
         // await getPlayers()
         // await getPlayerById()
-          await getWeapons()
+        // await getWeapons()
+          await createWeapon()
       } catch (error) {
             throw(error)
       } finally {
