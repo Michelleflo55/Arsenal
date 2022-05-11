@@ -10,26 +10,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-    Fighter.belongsTo(models.Player, { foreignKey: 'playerId'})
+      // define association here
     }
   }
   Fighter.init({
     name: DataTypes.STRING,
     image: DataTypes.STRING,
-    health: DataTypes.INTEGER,
-    choose_weaponsId: DataTypes.INTEGER,
-    playerId: {
-      type: DataTypes.INTEGER,
-      onDelete: 'CASCADE',
-      references: {
-        models: 'player',
-        key: 'id'
-      }
-    }
+    health: DataTypes.STRING,
+    playerId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Fighter',
-    tableName: 'fighters'
   });
   return Fighter;
 };
