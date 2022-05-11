@@ -18,7 +18,22 @@ const CreateWeapon = async ( req, res ) => {
         throw(error)
     }
 }
+
+const UpdateWeapon = async ( req, res ) => {
+    try {
+        const weaponsId = parseInt(req.params.id)
+        const update = await Choose_weapons.update(req.body, {
+            where: {id: weaponsId},
+            returning: true
+        })
+        res.send(update)
+    } catch (error) {
+       throw(error) 
+    }
+}
 module.exports = {
     GetWeapons,
-    CreateWeapon
+    CreateWeapon,
+    UpdateWeapon
+
 }

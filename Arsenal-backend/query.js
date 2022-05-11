@@ -47,8 +47,18 @@ const stringify = (data) => {
     }
   }
 
+  const updateWeapon = async () => {
 
-
+    const update = await Choose_weapons.update({ name: 'hammerNew'}, {where: {name: 'Spiked club'}},)
+      stringify(update)
+  }
+   
+  const deleteWeapon = async (id) => {
+    
+    const killArm = await Choose_weapons.destroy({where: {id: 7}})
+    stringify(killArm, 'weapon is destroyed')
+  } 
+  
 
 
   async function main() {
@@ -56,12 +66,16 @@ const stringify = (data) => {
         // await getPlayers()
         // await getPlayerById()
         // await getWeapons()
-          await createWeapon()
+          // await createWeapon()
+          // await updateWeapon()
+          // await deleteWeapon()
       } catch (error) {
             throw(error)
       } finally {
           sequelize.close()
       }
   }
+
+
 
   main()
