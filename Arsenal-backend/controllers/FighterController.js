@@ -18,6 +18,8 @@ const GetFighter = async ( req, res ) => {
     }
 }
 
+
+
 module.exports = {
     GetFighters,
     GetFighter
