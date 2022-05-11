@@ -1,5 +1,5 @@
 const res = require('express/lib/response')
-const { Player, sequelize, Choose_weapons } = require('./models')
+const { Player, sequelize, Choose_weapons, Fighter } = require('./models')
 const stringify = (data) => {
     console.log(JSON.stringify(data, null, 2))
   }
@@ -59,7 +59,14 @@ const stringify = (data) => {
     stringify(killArm, 'weapon is destroyed')
   } 
   
-
+  const getFighters = async () => {
+    try {
+      const fighters = await Fighter.findAll()
+      stringify(fighters)  
+    } catch (error) {
+      throw(error)
+    }
+  }
 
   async function main() {
       try {
@@ -69,6 +76,7 @@ const stringify = (data) => {
           // await createWeapon()
           // await updateWeapon()
           // await deleteWeapon()
+          await getFighters()
       } catch (error) {
             throw(error)
       } finally {
