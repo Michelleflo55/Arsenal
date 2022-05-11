@@ -9,6 +9,16 @@ const GetPlayers = async ( req,res ) => {
     }
 }
 
+const GetPlayer = async ( req, res ) => {
+    try {
+      const player = await Player.findByPk( req.params.id)
+      res.send(player)  
+    } catch (error) {
+       throw(error) 
+    }
+}
+
 module.exports ={
-    GetPlayers
+    GetPlayers,
+    GetPlayer
 }

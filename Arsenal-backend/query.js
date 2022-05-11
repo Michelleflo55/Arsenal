@@ -13,9 +13,24 @@ const stringify = (data) => {
       }
   }
 
+  const getPlayerById = async (id) => {
+      try {
+        const player = await Player.findByPk(1)
+        stringify(player)
+      } catch (error) {
+          throw(error)
+      }
+  }
+
+
+
+
+
+
   async function main() {
       try {
-          await getPlayers()
+        // await getPlayers()
+        await getPlayerById()
       } catch (error) {
             throw(error)
       } finally {

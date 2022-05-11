@@ -1,6 +1,6 @@
 'use strict';
-  const falso = require('@ngneat/falso');
-const{Fighter} = require('../models')
+const falso = require('@ngneat/falso');
+
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
