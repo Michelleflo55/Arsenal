@@ -1,5 +1,5 @@
 'use strict';
-  const falso = require('@ng');
+  const falso = require('@ngneat/falso');
 const{Fighter} = require('../models')
 
 module.exports = {
@@ -11,7 +11,6 @@ module.exports = {
     const players = [...Array(5)].map((a) => ({
       username: falso.randUserName(),
       password: falso.randPassword(),
-      fighterId: fighters[Math.floor(Math.random() * fighters.length)].id,
       createdAt: new Date(),
       updatedAt: new Date()
     }))
