@@ -1,29 +1,29 @@
-import { useState } from 'react'
-import { SignInUser } from '../services/Auth'
-import { useNavigate } from 'react-router-dom'
+// import { useState } from 'react'
+// import { SignInUser } from '../services/Auth'
+// import { useNavigate } from 'react-router-dom'
 
 const Signin = (props) => {
 
-  let navigate = useNavigate()
+  // let navigate = useNavigate()
 
   
-  const [formValues, setFormValues] = useState({ username: '', password: '' })
+  // const [formValues, setFormValues] = useState({ username: '', password: '' })
 
-  const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
-  }
+  // const handleChange = (e) => {
+  //   setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  // }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    const payload = await SignInUser(formValues)
-    setFormValues({
-      username: '',
-      password: ''
-    })
-    props.setUser(payload)
-    // props.toggleAuthenticated(true)
-    // localStorage.setItem('player', payload.username)
-    // localStorage.setItem('player-id', payload.id)
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const payload = await SignInUser(formValues)
+  //   setFormValues({
+  //     username: '',
+  //     password: ''
+  //   })
+  //   props.setUser(payload)
+  //   // props.toggleAuthenticated(true)
+  //   // localStorage.setItem('player', payload.username)
+  //   // localStorage.setItem('player-id', payload.id)
  
   }
 

@@ -7,8 +7,8 @@ import Home from './pages/Home'
 
 
 function App() {
-  const [authenticated, toggleAuthenticated] = useState(false)
-  const [player, setPlayer] = useState(null)
+  // const [authenticated, toggleAuthenticated] = useState(false)
+  // const [player, setPlayer] = useState(null)
   return (
     <div>
       <main >
