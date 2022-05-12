@@ -1,11 +1,15 @@
 import './styles/App.css';
+import Home from './pages/Home';
+import { Route, Routes } from 'react-router'
 
 function App() {
   return (
     <div >
-     <img src='https://i.ibb.co/d00vC3F/Arsenal.png' />
-
-    
+      <main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      </main>
     </div>
   );
 }
