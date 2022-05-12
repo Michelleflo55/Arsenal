@@ -1,14 +1,20 @@
+import image from '../Arsenal-4.png'
+
+
 const Home = () => {
-    let navigate = useNavigate()
+
   
     return (
-      <div className="home-container">
-  
-        <section className="welcome-signin">
-          <button className="button button-1"  onClick={() => navigate('/signin')}>
-            Get Started
-          </button>
+      <div >
+        <header>
+            <img  src={image} height={1000} width={1000} className="center-logo" />
+        </header>
+        <section>
+         
+        
+          
         </section>
+        
       </div>
     )
   }
