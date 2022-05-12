@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router'
 
 function App() {
   return (
-    <div >
+    <div className='app-background' >
       <main>
       <Routes>
         <Route path="/" element={<Home />} />

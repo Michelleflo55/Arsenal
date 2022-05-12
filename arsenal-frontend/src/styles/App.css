@@ -1,0 +1,13 @@
+.home-logo{
+    background-image: url('../Arsenal-2.png');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100px;
+    
+}
+
+.app-background{
+    background-color: rgb(157, 12, 12);
+}
