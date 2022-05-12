@@ -30,6 +30,34 @@ module.exports = {
       updatedAt: new Date()
      },
      {
+      name: '7696',
+      image: 'https://lh3.googleusercontent.com/NkPcV1ODwfqQKwaEqINuK5dgllI1l7SeoQlHmXL2o_UrAyxeewohMnnw5xFUICs30IMXMkT-iTxch7oVNzccNit6HClWDnYl8IHEmA=s0',
+      health: falso.randNumber({ min: 70, max: 100 }),
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name: '1560',
+      image: 'https://lh3.googleusercontent.com/FP-TmXg-ol5k05fa4iDrUBvgXaYbwA7xB_NOTYcHHO5D-O1evPEeuNmvMhyfgKrkb4nhswie7R674SuG0vnoHFK5BJnn0By5kb0IRHM=s0',
+      health: falso.randNumber({ min: 70, max: 100 }),
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name: '4706',
+      image: 'https://lh3.googleusercontent.com/0rAuDl6OQC9php1RwnHZsNe49r5-DC7P0TQVH0jGz4kzmh1kNADwb3dLpU01a9pbN5y5ij2cTTBRQwfHA1pesOuFRZ6yyGh0ClYcmds=s0',
+      health: falso.randNumber({ min: 70, max: 100 }),
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name: '9744',
+      image: 'https://lh3.googleusercontent.com/vMZc2VfQvYXAwUhKOcbw2t2QPNXXSobTTfAXlzJAafcHEemAcEgh8yzGCk3DXVnlQgn3TvO1K4z0ZU65AAOjr5WYztP3qTPzSyRLuw=s0',
+      health: falso.randNumber({ min: 70, max: 100 }),
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
       name: '3821',
       image: 'https://pbs.twimg.com/media/FSAd3M9WYAIT-We?format=jpg&name=large',
             playerId: player[Math.floor(Math.random() * player.length)].id,
