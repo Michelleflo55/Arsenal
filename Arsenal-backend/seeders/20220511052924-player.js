@@ -6,7 +6,7 @@ module.exports = {
 
     const players = [...Array(5)].map((a) => ({
       username: falso.randUserName(),
-      password: falso.randPassword(),
+      passwordDigest: falso.randPassword(),
       createdAt: new Date(),
       updatedAt: new Date()
     }))
