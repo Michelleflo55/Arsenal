@@ -68,6 +68,23 @@ const stringify = (data) => {
     }
   }
 
+  const getMyArsenal = async () => {
+    try {
+      const arsenal = await Player.findAll({
+        include: [
+          {
+            model: Choose_weapons,
+            as: 'arsenal',
+            through: {attributes: []}
+          }
+        ]
+      })
+      stringify(arsenal)
+    } catch (error) {
+      throw(error)
+    }
+  }
+
   async function main() {
       try {
         // await getPlayers()
@@ -76,7 +93,8 @@ const stringify = (data) => {
           // await createWeapon()
           // await updateWeapon()
           // await deleteWeapon()
-          await getFighters()
+          // await getFighters()
+          await getMyArsenal()
       } catch (error) {
             throw(error)
       } finally {
