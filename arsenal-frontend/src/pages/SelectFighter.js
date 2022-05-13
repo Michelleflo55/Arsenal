@@ -20,7 +20,7 @@ const SelectFighter = ({ player, authenticated }) => {
     return ( player && authenticated ) ? (
         <div className=''>
         <h3>Fighters</h3>
-        <div className="">
+        <div className="fighter-container">
             {fighters.map((fighter) => (
             <FighterDetails
             fighter={fighter}

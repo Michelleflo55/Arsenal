@@ -4,6 +4,8 @@ body{
     min-width: 100%;
     font-family: 'Share Tech Mono', monospace;
     text-align: center;
+    margin-left: auto;
+    margin-right:auto
 
 }
 
@@ -14,6 +16,7 @@ body{
     margin: auto;
     max-width: auto;
     min-width: auto;
+    height:300px
 }
 
 .register-sign-form{
@@ -61,5 +64,25 @@ input{
     font-size: 18px;
     background-color:white;
     padding: 10px;
+}
+
+.fighter-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    gap:5px;
+}
+.fighter-flex-image {
+    border: 3px solid pink;
+    border-radius: 50px;
+    width:fit-content;
+}    
+.fighter-flex-image:hover{
+    box-shadow: 0 0 10px 0 #a50000 inset, 0 0 20px 2px #ffffff;
+    border: 3px solid #e60000;
 }
 
