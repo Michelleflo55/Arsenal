@@ -3,6 +3,7 @@ body{
     width: 90%;
     min-width: 100%;
     font-family: 'Share Tech Mono', monospace;
+    text-align: center;
 
 }
 
@@ -61,3 +62,4 @@ input{
     background-color:white;
     padding: 10px;
 }
+

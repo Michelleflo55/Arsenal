@@ -1,21 +1,30 @@
 import image from '../Sord.png'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import FighterDetails from '../components/FighterDetails'
+import { GetFighters } from '../services/FighterServices'
 
-const SelectFighter = ({ player, authenticated, fighter }) => {
+const SelectFighter = ({ player, authenticated }) => {
     
     let navigate = useNavigate()
+    const [fighters, setFighters] = useState([])
+
+    useEffect(() => {
+      const handleFighter = async () => {
+        const data = await GetFighters()
+        setFighters(data)
+      }
+      handleFighter()
+    }, [])
 
     return ( player && authenticated ) ? (
-        <div className="browse-container">
+        <div className=''>
         <h3>Fighters</h3>
-        <div className="anime-grid">
-            {fighter.map((show) => (
+        <div className="">
+            {fighters.map((fighter) => (
             <FighterDetails
-            show={show}
-            key={show.id}
-            name={show.name}
-            image={show.image}
-            health={show.health}
+            fighter={fighter}
+            key={fighter.id}
         />   
         ))}
         </div>

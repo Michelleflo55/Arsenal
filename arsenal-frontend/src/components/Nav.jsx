@@ -2,14 +2,15 @@ import { Link } from 'react-router-dom'
 import image from '../Arsenal-4.png'
 
 
-const Nav = ({ authenticated, user, handleLogOut }) => {
+const Nav = ({ authenticated, player, handleLogOut }) => {
   let authenticatedOptions
-  if (user) {
+  if (player) {
     authenticatedOptions = (
-      <nav >
-        <h3>Welcome {user.username}!</h3>
+      <nav className=' register-sign-nav'>
+        <h3> {player.username}</h3>
         <Link onClick={handleLogOut} to="/">Sign Out</Link>
-       </nav>
+        <Link to="/selectFighter"> View Fighters</Link>
+      </nav>
     )
   }
 
@@ -30,11 +31,12 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   return (
     
     <header>
-    <Link to="/">
+      <Link to="/">
       <img src={image} className="nav-logo"/>
-    </Link>
-    {authenticated && user ? authenticatedOptions : publicOptions}
-  </header>
+      </Link>
+      {authenticated && player ? authenticatedOptions : publicOptions}
+    </header>
+    
   )
 }
 

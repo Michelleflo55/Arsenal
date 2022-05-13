@@ -2,16 +2,20 @@ import './styles/App.css';
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
 import { Route, Routes } from 'react-router'
+// import { GetFighters } from './services/FighterServices'
 import Home from './pages/Home'
 import Signin from './pages/SignIn'
 import Register from './pages/Register'
 import Nav from './components/Nav'
+import SelectFighter from './pages/SelectFighter'
+
 
 
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [player, setPlayer] = useState(null)
+  // const [fighter, setFighter] = useState([])
 
   const handleLogOut = () => {
     setPlayer(null)
@@ -33,9 +37,17 @@ function App() {
     }
   }, [])
 
+  // useEffect(() => {
+  //   const handleFighter = async () => {
+  //     const data = await GetFighters()
+  //     setFighter(data)
+  //   }
+  //   handleFighter()
+  // }, [])
+
   return (
     <div>
-      <div>
+      <div >
         <Nav
         authenticated={authenticated}
         player={player}
@@ -53,6 +65,13 @@ function App() {
                 authenticated={authenticated}
                 toggleAuthenticated={toggleAuthenticated} 
               />} />
+          <Route path="/selectFighter" element={
+            <SelectFighter
+             player={player}
+             authenticated={authenticated}
+            //  fighter={fighter}
+             />} 
+          />
         </Routes>
       </main>
       

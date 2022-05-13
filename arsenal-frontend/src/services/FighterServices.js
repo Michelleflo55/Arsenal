@@ -1,9 +1,9 @@
 import Client from './api'
-import { useNavigate  } from 'react-router'
+
 
 export const GetFighter = async (data) => {
     try {
-        const res = await Client.get(`/api/fighters/${data}`)
+        const res = await Client.get(`/fighters/${data}`)
         return res.data
     } catch (error) {
         throw(error)
@@ -12,8 +12,9 @@ export const GetFighter = async (data) => {
 
 export const GetFighters = async () => {
     try {
-        const res = await Client.get('/api/fighters')
+        const res = await Client.get('/fighters')
         return res.data
+    
     } catch (error) {
         throw(error)
     }
