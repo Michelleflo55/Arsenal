@@ -9,14 +9,12 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       <nav className='nav-bar'>
         <h3>Welcome {user.username}!</h3>
         <Link onClick={handleLogOut} to="/">Sign Out</Link>
-        
-        </nav>
+       </nav>
     )
   }
 
   const publicOptions = (
     <nav className='nav-bar'>
-      <Link to="/">Home</Link>
       <Link to="/register">Register</Link>
       <Link to="/signin">Sign In</Link>
     </nav>
@@ -27,11 +25,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     
     <header>
     <Link to="/">
-      <div >
-        <img
-          src={image} height={1000} width={1000} className="home-logo"
-        />
-      </div>
+      <img src={image} className="nav-logo"/>
     </Link>
     {authenticated && user ? authenticatedOptions : publicOptions}
   </header>

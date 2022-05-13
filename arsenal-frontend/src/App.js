@@ -35,25 +35,27 @@ function App() {
 
   return (
     <div>
-      <div><Nav
+      <div>
+        <Nav
         authenticated={authenticated}
         player={player}
         handleLogOut={handleLogOut}
-      /></div>
-      <main className='app-container'>
+       />
+      </div>
+      <main>
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={
-            <Signin
-              setPlayer={setPlayer}
-              player={player}
-              authenticated={authenticated}
-              toggleAuthenticated={toggleAuthenticated} 
-            />} />
-        <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/signin" element={
+              <Signin
+                setPlayer={setPlayer}
+                player={player}
+                authenticated={authenticated}
+                toggleAuthenticated={toggleAuthenticated} 
+              />} />
         </Routes>
-         
-       </main>
+      </main>
+      
     </div>
   );
 }

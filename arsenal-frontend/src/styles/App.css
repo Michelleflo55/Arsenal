@@ -1,23 +1,25 @@
 body{
-    background-color: rgb(157, 12, 12);
-    
-    
+    background-color: rgb(157, 12, 12); 
+    width: 90%;
+    min-width: 100%;
+    font-family: 'Share Tech Mono', monospace;
+
 }
 
-.home-logo {
-    
+.nav-logo {
     display: block;
     justify-content: center;
     align-items: center;
     margin: auto;
-    max-width: 100%;
-    min-width: 100%;
-    height:auto
-   
+    max-width: auto;
+    min-width: auto;
 }
 
-.app-container {
-    width: 90%;
-    min-width: 100%;
-    margin: auto;
+.register-form{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: fit-content;
+    padding-bottom: 5px;
+ 
 }

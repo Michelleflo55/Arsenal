@@ -32,10 +32,10 @@ const Register = () => {
     }
   
     return (
-      <div className="register-wrapper">
+      <div className="regeister-container">
               <h3>Register to fight!!</h3>
         <div className="register-form">
-          <form className="form" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="input-wrapper">
               <label>Username</label>
               <input
@@ -60,7 +60,7 @@ const Register = () => {
               />
             </div>
             
-            <button className="button-2 button-2B"
+            <button className=""
               disabled={
                 !formValues.username ||
                 (!formValues.password  === formValues.password)
