@@ -1,4 +1,5 @@
 import Client from './api'
+import { useNavigate  } from 'react-router'
 
 export const GetFighter = async (data) => {
     try {

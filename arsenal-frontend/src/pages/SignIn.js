@@ -30,8 +30,8 @@ const Signin = (props) => {
 
   return (
     <div className="signin">
-			<h3>SignIn</h3>
-      <div className="signin-form">
+			<h3 className='register-sign-title'>SignIn</h3>
+      <div className="register-sign-form">
         <form className="form" onSubmit={handleSubmit}>
           <div className="input-wrapper">
             <label>Username</label>
@@ -44,6 +44,7 @@ const Signin = (props) => {
               required
             />
           </div>
+          <br />
           <div className="input-wrapper">
             <label>Password</label>
             <input
@@ -55,7 +56,7 @@ const Signin = (props) => {
               required
             />
           </div>
-          <button className="button-2 button-2B" disabled={!formValues.username || !formValues.password}>
+          <button className="register-sign-button" disabled={!formValues.username || !formValues.password}>
             Sign In
           </button>
         </form>

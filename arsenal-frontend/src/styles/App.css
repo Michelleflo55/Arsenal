@@ -15,11 +15,49 @@ body{
     min-width: auto;
 }
 
-.register-form{
+.register-sign-form{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     width: fit-content;
     padding-bottom: 5px;
  
+}
+
+.register-sign-button{
+    margin-top: 50px;
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+    background-color: transparent;
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: #eaeaea;
+}
+.register-sign-button:hover{
+    box-shadow: 0 0 10px 0 #ffffff inset, 0 0 20px 2px #ffffff;
+    border: 3px solid #ffffff;
+}
+
+.register-sign-title, .register-sign-nav {
+    text-align: center;
+    text-decoration:none;
+    color: white;
+    font-size:30px;
+}
+a{color: white}
+a:link { text-decoration: none;}
+a:hover { text-decoration: underline; 
+        color: white}
+input{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    color: #000000;
+    font-size: 18px;
+    background-color:white;
+    padding: 10px;
 }

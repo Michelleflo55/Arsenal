@@ -6,7 +6,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
   if (user) {
     authenticatedOptions = (
-      <nav className='nav-bar'>
+      <nav >
         <h3>Welcome {user.username}!</h3>
         <Link onClick={handleLogOut} to="/">Sign Out</Link>
        </nav>
@@ -14,9 +14,15 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   }
 
   const publicOptions = (
-    <nav className='nav-bar'>
+    
+    <nav className=' register-sign-nav' >
+      <a>
       <Link to="/register">Register</Link>
+      </a>
+      <br />
+      <a>
       <Link to="/signin">Sign In</Link>
+      </a>
     </nav>
   )
 
