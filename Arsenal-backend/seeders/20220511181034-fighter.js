@@ -8,7 +8,7 @@ module.exports = {
    const fighter = [
      {
       name: '2852',
-      image: 'https://lh3.googleusercontent.com/vJI2i_DcIGHZJZjtYTG3FL7mxi3jMbDsnb20Xr7BgfdS8I0ACO_GkCaADLHVXajFsCTw52WNW3g-bO7lQoyS_MqPp-aQm9cKdags2g=s0',
+      image: 'https://i.ibb.co/gg1hxyj/2852.png',
       health: falso.randNumber({ min: 70, max: 100 }),
       playerId: player[Math.floor(Math.random() * player.length)].id,
       createdAt: new Date(),
