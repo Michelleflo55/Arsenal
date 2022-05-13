@@ -60,7 +60,8 @@ module.exports = {
      {
       name: '3821',
       image: 'https://pbs.twimg.com/media/FSAd3M9WYAIT-We?format=jpg&name=large',
-            playerId: player[Math.floor(Math.random() * player.length)].id,
+      health: falso.randNumber({ min: 70, max: 100 }),
+      playerId: player[Math.floor(Math.random() * player.length)].id,
       createdAt: new Date(),
       updatedAt: new Date()
      },
