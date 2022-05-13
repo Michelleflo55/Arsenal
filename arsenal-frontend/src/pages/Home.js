@@ -7,7 +7,7 @@ const Home = () => {
     return (
       <div >
         <header>
-            <img  src={image} height={1000} width={1000} className="center-logo" />
+            <img  src={image} height={1000} width={1000} className="home-logo" />
         </header>
         <section>
          
