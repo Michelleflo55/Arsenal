@@ -4,7 +4,7 @@ const middleware = require('../middleware')
 const Login = async (req, res) => {
     try {
         const user = await Player.findOne({
-            where: { user: req.body.user },
+            where: { username: req.body.username },
             raw: true
         })
         if (
