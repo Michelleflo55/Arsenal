@@ -21,7 +21,7 @@ export const GetWeapon = async (data) => {
 export const CreateWeapon = async (data) => {
     
     try {
-       const res = await Client.post(`/weapons/new/${data.playerId}/${data.choose_weaponsId}`)
+       const res = await Client.post(`/weapons/new/${data.playerId}/${data.choose_weaponsId}`, data)
        return res.data
     } catch (error) {
         throw(error)
@@ -30,7 +30,7 @@ export const CreateWeapon = async (data) => {
 
 export const UpdateWeapon = async (data) => {
     try {
-        const res = await Client.put(`/weapons/${data.choose_weaponsId}`)
+        const res = await Client.put(`/weapons/${data.choose_weaponsId}`, data)
         return res.data
     } catch (error) {
       throw(error)  

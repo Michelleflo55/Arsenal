@@ -111,7 +111,7 @@ input{
     display:flex;
     /* margin-left: 30vh */
     width:fit-content;
-
+    
 }
 
 .publicweapons-title{
@@ -128,7 +128,13 @@ input{
     -ms-flex-align:start;
     justify-content: flex-start;
     margin-left: 2%;
-    gap:2px
+    gap:2px;
+    /* background-color: #0000009d;
+    border-radius: 30px;
+    padding-top:30px; */
+   
+
+
 }
 .buildweapons-title{
     text-align: end;
