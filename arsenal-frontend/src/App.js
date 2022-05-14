@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Signin from './pages/SignIn'
 import Register from './pages/Register'
 import Nav from './components/Nav'
-import SelectFighter from './pages/SelectFighter'
+import SelectFighters from './pages/SelectFighters'
 
 
 
@@ -66,7 +66,7 @@ function App() {
                 toggleAuthenticated={toggleAuthenticated} 
               />} />
           <Route path="/selectFighter" element={
-            <SelectFighter
+            <SelectFighters
              player={player}
              authenticated={authenticated}
             //  fighter={fighter}

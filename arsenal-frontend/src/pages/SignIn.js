@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 
+
 const Signin = (props) => {
 
   let navigate = useNavigate()
@@ -24,7 +25,7 @@ const Signin = (props) => {
     props.toggleAuthenticated(true)
     localStorage.setItem('player', payload.username)
     localStorage.setItem('player', payload.id)
- 
+    navigate('/home')
   }
 
 
