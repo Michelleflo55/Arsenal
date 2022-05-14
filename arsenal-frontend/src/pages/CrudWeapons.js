@@ -16,11 +16,11 @@ let navigate = useNavigate()
         <div>
            <h3>Get Weapons for Arsenal</h3> 
            <div className=''>
-                {weapons.map((weapon) => (
+                {weapons.map((show) => (
                     <WeaponDetails
-           
-                    weapon={weapon}
-                    key={weapon.id}
+                    show={show}
+                    weapon={show.weapon}
+                    key={show.weapon.id}
                 />  
                 ))}
             </div>               
