@@ -9,7 +9,7 @@ module.exports = {
         name: 'Bloody knuckles',
         speed: 10,
         power: 3,
-        image:'file:///Users/bubbies/Desktop/weapons/bloody%20handwraps%20png.png' ,
+        image:'https://i.ibb.co/sCQ3MMn/bloody-handwraps.png' ,
         damageLevel: 15,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -18,7 +18,7 @@ module.exports = {
         name: 'Nunchucks',
         speed: 7,
         power: 3,
-        image: 'file:///Users/bubbies/Desktop/weapons/nunchucks%20png.png',
+        image: 'https://i.ibb.co/jMLB6B7/nunchucks.png',
         damageLevel: 10.5,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -28,7 +28,7 @@ module.exports = {
         name: 'Brass knuckles',
         speed: 4,
         power: 7,
-        image: 'file:///Users/bubbies/Desktop/weapons/brass%20knuckles%20png.png',
+        image: 'https://i.ibb.co/v42dFDG/brass-knuckles.png',
         damageLevel: 14,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -37,7 +37,7 @@ module.exports = {
         name: 'Spiked club',
         speed: 3,
         power: 9,
-        image: 'file:///Users/bubbies/Desktop/weapons/spiked%20club%20png.png',
+        image: 'https://i.ibb.co/ftMKsk3/spiked-club.png',
         damageLevel: 13.5,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -46,7 +46,7 @@ module.exports = {
         name: 'Throwing stars',
         speed: 6,
         power: 4,
-        image: 'file:///Users/bubbies/Desktop/weapons/throwing%20stars%20png.png',
+        image: 'https://i.ibb.co/2YHrx91/throwing-stars.png',
         damageLevel: 12,
         createdAt: new Date(),
         updatedAt: new Date()
