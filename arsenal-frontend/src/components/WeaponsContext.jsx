@@ -3,13 +3,13 @@ import { useState, createContext } from 'react'
 const WeaponsContext = createContext()
 
 const WeaponsProvider = (props) => {
-    const [weapons, setWeapons] = useState([])
+    const [weapon, setWeapon] = useState([])
 
     return(
-        <WeaponsContext.Provider value={{weapons, setWeapons}} >
+        <WeaponsContext.Provider value={{weapon, setWeapon}} >
             {props.children}
         </WeaponsContext.Provider>
     )
 }
 
-export default { WeaponsContext, WeaponsProvider}
+export { WeaponsContext, WeaponsProvider}

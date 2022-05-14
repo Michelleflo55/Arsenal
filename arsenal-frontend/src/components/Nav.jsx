@@ -9,8 +9,9 @@ const Nav = ({ authenticated, player, handleLogOut }) => {
       <nav className=' register-sign-nav'>
         <h3> Player: {player.username} </h3>
         {/* <Link onClick={handleLogOut} to="/">Sign Out</Link> */}
-        <Link to="/selectFighters"> View Fighters</Link>
-        <Link to="/crudWeapons">Weapons</Link>
+        <Link to="/selectFighter"> View Fighters</Link>
+        <br />
+        <Link to="/weapons">Weapons</Link>
 
       </nav>
     )

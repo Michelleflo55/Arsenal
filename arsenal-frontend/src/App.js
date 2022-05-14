@@ -10,7 +10,7 @@ import Register from './pages/Register'
 import Nav from './components/Nav'
 import SelectFighters from './pages/SelectFighters'
 import CrudWeapons from './pages/CrudWeapons';
-import WeaponsProvider from './components/WeaponsContext'
+import { WeaponsProvider } from './components/WeaponsContext'
 
 
 
@@ -78,14 +78,14 @@ function App() {
                 authenticated={authenticated}
                 toggleAuthenticated={toggleAuthenticated} 
               />} />
-          <Route path="/selectFighters" element={
+          <Route path="/selectFighter" element={
             <SelectFighters
              player={player}
              authenticated={authenticated}
             //  fighter={fighter}
              />} 
           />
-          <Route path='/crudWeapons' element={
+          <Route path='/weapons' element={
             <CrudWeapons
              player={player}
              authenticated={authenticated}
