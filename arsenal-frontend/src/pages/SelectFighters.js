@@ -21,10 +21,10 @@ const SelectFighter = ({ player, authenticated }) => {
         <div className=''>
         <h3>Fighters</h3>
         <div className="fighter-container">
-            {fighters.map((fighter) => (
-            <FighterDetails
-            fighter={fighter}
-            key={fighter.id}
+          {fighters.map((fighter) => (
+          <FighterDetails
+          fighter={fighter}
+          key={fighter.id}
         />   
         ))}
         </div>
