@@ -53,6 +53,7 @@ function App() {
     const handleWeapons = async () => {
       const data = await GetWeapons()
       setWeapons(data)
+      console.log(data)
     }
     handleWeapons()
   }, [])
