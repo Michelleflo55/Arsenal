@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(157, 12, 12); 
+    background-color: rgb(114, 1, 1); 
     width: 90%;
     min-width: 100%;
     font-family: 'Share Tech Mono', monospace;
@@ -8,7 +8,7 @@ body{
     margin-right:auto
 
 }
-
+/* NAV */
 .nav-logo {
     display: block;
     justify-content: center;
@@ -18,7 +18,16 @@ body{
     min-width: auto;
     height:300px
 }
-
+.nav-bar-divider{
+    background-color: white;
+    color:black;
+}
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+/* SIGN-IN / REGISTER */
 .register-sign-form{
     margin-left: auto;
     margin-right: auto;
@@ -48,13 +57,13 @@ body{
 .register-sign-title, .register-sign-nav {
     text-align: center;
     text-decoration:none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size:30px;
 }
-a{color: white}
+a{color: rgb(0, 0, 0)}
 a:link { text-decoration: none;}
 a:hover { text-decoration: underline; 
-        color: white}
+        color: rgba(0, 0, 0, 0.592)}
 input{
     width: 200px;
     height: 30px;
@@ -65,7 +74,7 @@ input{
     background-color:white;
     padding: 10px;
 }
-
+/* FIGHTER */
 .fighter-container{
     display:flex;
     flex-direction: row;
@@ -75,10 +84,10 @@ input{
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    gap:5px;
+    gap:35px;
    
 }
-.fighter-details-flex {
+.fighter-details-flex, .weapons-flex {
     border: 3px solid pink;
     border-radius: 50px;
     width:fit-content;
@@ -97,4 +106,56 @@ input{
     width: fit-content;
     margin:5px
 }
+/* WEAPONS */
+.weapons-container{
+    display:flex;
+    /* margin-left: 30vh */
+    width:fit-content;
 
+}
+
+.publicweapons-title{
+    text-align: start;
+    margin-left:11%;
+   
+}
+.weapons-left{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 36vw;
+    width:fit-content;
+    -ms-flex-align:start;
+    justify-content: flex-start;
+    margin-left: 2%;
+    gap:2px
+}
+.buildweapons-title{
+    text-align: end;
+    margin-right:35%; 
+}
+.buildweapons-list{
+    list-style: none;
+    font-weight: 100;
+}
+.weapons-right{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 36vw;
+    width:fit-content;
+    justify-content: flex-end;
+    /* margin-left: 2% */
+    gap:2px
+}
+
+.weapons-flex:hover{
+    box-shadow: 0 0 10px 0 #a50000 inset, 0 0 20px 2px #ffffff;
+    border: 3px solid #e60000;
+    transform: scale(1.2);
+   
+}
+
+.nav-fight-link{
+   display: inline-block;
+}

@@ -40,3 +40,6 @@ const SelectFighter = ({ player, authenticated }) => {
       )
 }
 export default SelectFighter
+
+// make image bigger
+//https://www.codegrepper.com/code-examples/css/make+image+bigger+on+hover+css

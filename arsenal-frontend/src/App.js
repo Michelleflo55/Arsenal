@@ -2,15 +2,23 @@ import './styles/App.css';
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
 import { Route, Routes } from 'react-router'
+
 // import { GetFighters } from './services/FighterServices'
+//services
 import { GetWeapons } from './services/WeaponsServices'
-import Home from './pages/Home'
+import { WeaponsProvider } from './components/WeaponsContext'
+
+import Nav from './components/Nav'
+//importingPages
 import Signin from './pages/SignIn'
 import Register from './pages/Register'
-import Nav from './components/Nav'
+import Home from './pages/Home'
 import SelectFighters from './pages/SelectFighters'
 import CrudWeapons from './pages/CrudWeapons';
-import { WeaponsProvider } from './components/WeaponsContext'
+
+
+
+
 
 
 
@@ -66,6 +74,7 @@ function App() {
         player={player}
         handleLogOut={handleLogOut}
        />
+     
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

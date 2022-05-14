@@ -6,7 +6,7 @@ const ArsenalProvider = (props) => {
     const [arsenal, setArsenal] = useState([])
     
     return(
-        <ArsenalContext.Provider value={{watchlist, setWatchlist}} >
+        <ArsenalContext.Provider value={{arsenal, setArsenal}} >
             {props.children}
         </ArsenalContext.Provider>
     )

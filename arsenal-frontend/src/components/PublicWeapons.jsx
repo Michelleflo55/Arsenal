@@ -1,4 +1,4 @@
-const WeaponsDetails = (props) => {
+const PublicWeapons = (props) => {
     return(
         <div className='weapons-flex'>
             <h3>{props.weapon.name}</h3>
@@ -8,9 +8,11 @@ const WeaponsDetails = (props) => {
             <h3></h3>
             <img 
             src={props.weapon.image}
+            style={{maxWidth: "250px"}} 
+            className='fighter-image'
             />
         </div>
     )
     }
 
-    export default WeaponsDetails
+    export default PublicWeapons
