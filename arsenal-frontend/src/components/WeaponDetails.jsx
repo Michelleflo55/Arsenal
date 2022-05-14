@@ -1,6 +1,6 @@
 const WeaponsDetails = (props) => {
     return(
-        <div>
+        <div className='weapons-flex'>
             <h3>{props.weapon.name}</h3>
             <h3>Speed:{props.weapon.speed}</h3>
             <h3>Power:{props.weapon.power}</h3>

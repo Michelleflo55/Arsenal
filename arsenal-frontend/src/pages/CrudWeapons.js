@@ -15,12 +15,11 @@ let navigate = useNavigate()
     return (player && authenticated) ? (
         <div>
            <h3>Get Weapons for Arsenal</h3> 
-           <div className=''>
-                {weapons.map((show) => (
+           <div className='weapons-container'>
+                {weapons.map((weapon) => (
                     <WeaponDetails
-                    show={show}
-                    weapon={show.weapon}
-                    key={show.weapon.id}
+                    weapon={weapon}
+                    key={weapon.id}
                 />  
                 ))}
             </div>               
