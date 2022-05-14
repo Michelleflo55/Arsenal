@@ -8,7 +8,7 @@ const Nav = ({ authenticated, player, handleLogOut }) => {
     authenticatedOptions = (
       <nav className=' register-sign-nav'>
         <h3> Player: {player.username} </h3>
-        {/* <Link onClick={handleLogOut} to="/">Sign Out</Link> */}
+        <Link onClick={handleLogOut} to="/">Sign Out</Link>
         <Link to="/selectFighter"> View Fighters</Link>
       </nav>
     )

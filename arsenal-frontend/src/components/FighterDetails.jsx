@@ -3,10 +3,10 @@
 const FighterDetails = ( props ) => {
     return(
     
-        <div className=''>
-            <h3>Fighter: {props.fighter.name}</h3>
-            <h3>Health: {props.fighter.health}</h3>    
-            <img className='fighter-flex-image'
+        <div className='fighter-details-flex'>
+            <h3 className=''>Fighter: {props.fighter.name}</h3>
+            <h3 className=''>Health: {props.fighter.health}</h3>    
+            <img className='fighter-image'
                 src={props.fighter.image}
                 style={{maxWidth: "300px"}} 
                 />

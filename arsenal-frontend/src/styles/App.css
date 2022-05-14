@@ -70,19 +70,31 @@ input{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 80vw;
+    max-width: 70vw;
+    width:fit-content;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     gap:5px;
+   
 }
-.fighter-flex-image {
+.fighter-details-flex {
     border: 3px solid pink;
     border-radius: 50px;
     width:fit-content;
+    transition: all .2s ease-in-out; 
+    background-color: rgba(0, 0, 0, 0.759);
+    color:white ;
+    font-size: 20px;
 }    
-.fighter-flex-image:hover{
+.fighter-details-flex:hover{
     box-shadow: 0 0 10px 0 #a50000 inset, 0 0 20px 2px #ffffff;
     border: 3px solid #e60000;
+    transform: scale(1.5);
+}
+.fighter-image{
+    border-radius: 45px;
+    width: fit-content;
+    margin:5px
 }
 
