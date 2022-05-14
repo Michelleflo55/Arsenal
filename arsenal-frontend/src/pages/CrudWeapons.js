@@ -1,16 +1,19 @@
 import { useNavigate } from 'react-router-dom'
+import image from '../Sord.png'
+
+
 
 const CrudWeapons = ({ player, authenticated, weapons}) => {
 
 let navigate = useNavigate()
-    return (user && authenticated) ? (
+    return (player && authenticated) ? (
         <div>
            <h3>Get Weapons for Arsenal</h3> 
            <div className=''>
                 {weapons.map((weapon) => (
                     <WeaponsDetails
                     weapon={weapon}
-                    key={show.id}
+                    key={weapon.id}
                 />  
                 ))}
             </div>               

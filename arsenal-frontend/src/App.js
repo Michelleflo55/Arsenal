@@ -3,11 +3,14 @@ import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
 import { Route, Routes } from 'react-router'
 // import { GetFighters } from './services/FighterServices'
+import { GetWeapons } from './services/WeaponsServices'
 import Home from './pages/Home'
 import Signin from './pages/SignIn'
 import Register from './pages/Register'
 import Nav from './components/Nav'
 import SelectFighters from './pages/SelectFighters'
+import CrudWeapons from './pages/CrudWeapons';
+import WeaponsProvider from './components/WeaponsContext'
 
 
 
@@ -16,6 +19,7 @@ function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [player, setPlayer] = useState(null)
   // const [fighter, setFighter] = useState([])
+  const [weapons, setWeapons] = useState([])
 
   const handleLogOut = () => {
     setPlayer(null)
@@ -45,8 +49,17 @@ function App() {
   //   handleFighter()
   // }, [])
 
+  useEffect(()=> {
+    const handleWeapons = async () => {
+      const data = await GetWeapons()
+      setWeapons(data)
+    }
+    handleWeapons()
+  }, [])
+
   return (
     <div>
+      <WeaponsProvider>
       <div >
         <Nav
         authenticated={authenticated}
@@ -65,16 +78,24 @@ function App() {
                 authenticated={authenticated}
                 toggleAuthenticated={toggleAuthenticated} 
               />} />
-          <Route path="/selectFighter" element={
+          <Route path="/selectFighters" element={
             <SelectFighters
              player={player}
              authenticated={authenticated}
             //  fighter={fighter}
              />} 
           />
+          <Route path='/crudWeapons' element={
+            <CrudWeapons
+             player={player}
+             authenticated={authenticated}
+             weapons={weapons}
+            />
+          }
+          />
         </Routes>
       </main>
-      
+      </WeaponsProvider>  
     </div>
   );
 }

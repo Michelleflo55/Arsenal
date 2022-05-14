@@ -12,4 +12,4 @@ const WeaponsProvider = (props) => {
     )
 }
 
-export { WeaponsContext, WeaponsProvider}
+export default { WeaponsContext, WeaponsProvider}
