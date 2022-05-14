@@ -3,10 +3,10 @@ import { useState, createContext } from 'react'
 const WeaponsContext = createContext()
 
 const WeaponsProvider = (props) => {
-    const [weapon, setWeapon] = useState([])
+    const [weapons, setWeapons] = useState([])
 
     return(
-        <WeaponsContext.Provider value={{weapon, setWeapon}} >
+        <WeaponsContext.Provider value={{weapons, setWeapons}} >
             {props.children}
         </WeaponsContext.Provider>
     )

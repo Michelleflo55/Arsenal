@@ -1,17 +1,14 @@
 import { useNavigate } from 'react-router-dom'
-import { useContext } from 'react'
-import { WeaponsContext } from '../components/WeaponsContext'
+// import { useContext } from 'react'
+// import { WeaponsContext } from '../components/WeaponsContext'
 import image from '../Sord.png'
 import WeaponDetails from '../components/WeaponDetails'
-import {GetPlayer, CreateWepons} from '../services/WeaponsServices'
 
 
+const CrudWeapons = ({ player, authenticated, weapons}) => {
 
-
-const CrudWeapons = ({ player, authenticated }) => {
-
-    const {weapon} = useContext(WeaponsContext)
-    const {setWeapon} = useContext(WeaponsContext)
+    // const {weapons} = useContext(WeaponsContext)
+   
 
 
 let navigate = useNavigate()
@@ -19,7 +16,7 @@ let navigate = useNavigate()
         <div>
            <h3>Get Weapons for Arsenal</h3> 
            <div className=''>
-                {weapon.map((weapon) => (
+                {weapons.map((weapon) => (
                     <WeaponDetails
            
                     weapon={weapon}

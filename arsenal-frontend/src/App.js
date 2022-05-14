@@ -60,13 +60,11 @@ function App() {
   return (
     <div>
       <WeaponsProvider>
-      <div >
         <Nav
         authenticated={authenticated}
         player={player}
         handleLogOut={handleLogOut}
        />
-      </div>
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -90,8 +88,7 @@ function App() {
              player={player}
              authenticated={authenticated}
              weapons={weapons}
-            />
-          }
+            />}
           />
         </Routes>
       </main>
