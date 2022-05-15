@@ -3,21 +3,21 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Choose_weapons extends Model {
+  class Public_weapons extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Choose_weapons.belongsToMany(models.Player, {
+      Public_weapons.belongsToMany(models.Player, {
         through: models.My_arsenal,
         as: 'weapons',
-        foreignKey: 'choose_weaponsId'
+        foreignKey: 'public_weaponsId'
       })
     }
   }
-  Choose_weapons.init({
+  Public_weapons.init({
     name: DataTypes.STRING,
     speed: DataTypes.INTEGER,
     power: DataTypes.INTEGER,
@@ -25,8 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     damageLevel:DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Choose_weapons',
-    tableName: 'choose_weapons'
+    modelName: 'public_weapons',
+    tableName: 'public_weapons'
   });
-  return Choose_weapons;
+  return Public_weapons;
 }
