@@ -1,7 +1,7 @@
-const Router = require('express').Router()
-const controller = require('../controllers/FighterController')
+// const Router = require('express').Router()
+// const controller = require('../controllers/FighterController')
 
-Router.get('/', controller.GetFighters)
-Router.get('/:id', controller.GetFighter)
+// Router.get('/', controller.GetFighters)
+// Router.get('/:id', controller.GetFighter)
 
-module.exports = Router
+// module.exports = Router
