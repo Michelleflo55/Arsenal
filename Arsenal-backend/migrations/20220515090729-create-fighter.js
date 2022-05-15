@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('choose_weapons', {
+    await queryInterface.createTable('fighters', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,17 +11,19 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      speed: {
-        type: Sequelize.INTEGER
-      },
-      power: {
-        type: Sequelize.INTEGER
-      },
       image: {
         type: Sequelize.STRING
       },
-      damageLevel: {
-        type: Sequelize. INTEGER
+      health: {
+        type: Sequelize.INTEGER
+      },
+      playerId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'players',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +36,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('choose_weapons');
+    await queryInterface.dropTable('fighters');
   }
-}
+};
