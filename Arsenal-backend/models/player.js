@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         through: models.My_arsenal,
         foreignKey: 'playerId'
       })
-      Player.hasOne(models.Fighter, {foreignKey: 'playerId'})
+      Player.hasMany(models.Fighter, {foreignKey: 'playerId'})
     }
   }
   Player.init({
