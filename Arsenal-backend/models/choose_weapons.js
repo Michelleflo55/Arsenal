@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
   }
- Choose_weapons.init({
+  Choose_weapons.init({
     name: DataTypes.STRING,
     speed: DataTypes.INTEGER,
     power: DataTypes.INTEGER,
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     damageLevel:DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'choose_weapons',
+    modelName: 'Choose_weapons',
     tableName: 'choose_weapons'
   });
   return Choose_weapons;

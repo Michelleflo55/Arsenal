@@ -10,7 +10,7 @@ module.exports = {
     
     const my_arsenal = chooseWeapons.map((a) => ({
       playerId: players[Math.floor(Math.random() * players.length)].id,
-      choose_WeaponsId: chooseWeapons[Math.floor(Math.random() * chooseWeapons.length)].id,
+      choose_weaponsId: chooseWeapons[Math.floor(Math.random() * chooseWeapons.length)].id,
       createdAt: new Date(),
       updatedAt: new Date()
     }))
@@ -20,4 +20,3 @@ module.exports = {
     await queryInterface.bulkDelete('my_arsenals')
   }
 };
-
