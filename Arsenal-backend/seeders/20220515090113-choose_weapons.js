@@ -4,7 +4,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-    const public_weapons = [
+    const choose_weapons = [
       {
         name: 'Bloody knuckles',
         speed: 10,
@@ -53,10 +53,10 @@ module.exports = {
       }
 
     ]
-    await queryInterface.bulkInsert('public_weapons', public_weapons)
+    await queryInterface.bulkInsert('choose_weapons', choose_weapons)
   },
 
   down: async (queryInterface, Sequelize) => {
-   await queryInterface.bulkDelete('public_weapons')
+   await queryInterface.bulkDelete('choose_weapons')
   }
 };

@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      public_weaponsId: {
+      choose_weaponsId: {
         type: Sequelize.INTEGER
       },
       playerId: {

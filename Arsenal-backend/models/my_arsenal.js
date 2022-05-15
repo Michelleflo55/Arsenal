@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   My_arsenal.init({
-    public_weaponsId: {
+    choose_weaponsId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
-        model: 'public_weapons',
+        model: 'choose_weapons',
         key: 'id'
       }
     },
