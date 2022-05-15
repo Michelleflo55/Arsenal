@@ -1,8 +1,17 @@
 import { useState } from 'react'
-import { WeaponsContext } from '../components/WeaponsContext'
+
 const WeaponForm = ( props ) => {
     
-
+    const [addWeaponDamage, setWeaponDamage] = useState({
+        speed:1,
+        power:1
+    })
+    const postSpeed = (e) =>{ 
+        setWeaponDamage({ ...addWeaponDamage, speed: e.target.value })
+      }
+    const postPower = (e) =>{ 
+        setWeaponDamage({ ...addWeaponDamage, power: e.target.value })
+      } 
     return(
         <div>
         <form>
