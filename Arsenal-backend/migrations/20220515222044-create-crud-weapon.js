@@ -1,21 +1,27 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('my_arsenals', {
+    await queryInterface.createTable('crud_weapons', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      choose_weaponsId: {
+      name: {
+        type: Sequelize.STRING
+      },
+      speed: {
         type: Sequelize.INTEGER
       },
-      playerId: {
+      power: {
         type: Sequelize.INTEGER
       },
-      crud_weaponId: {
+      damage: {
         type: Sequelize.INTEGER
+      },
+      image: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -28,6 +34,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('my_arsenals');
+    await queryInterface.dropTable('crud_weapons');
   }
 };
