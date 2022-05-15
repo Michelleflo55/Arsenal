@@ -1,5 +1,5 @@
 const res = require('express/lib/response')
-const { Player, sequelize, Choose_weapons, Fighter } = require('./models')
+const { Player, sequelize, Public_weapons, Fighter } = require('./models')
 const stringify = (data) => {
     console.log(JSON.stringify(data, null, 2))
   }
@@ -25,7 +25,7 @@ const stringify = (data) => {
 
   const getWeapons = async () => {
     try {
-      const weapons = await Choose_weapons.findAll()
+      const weapons = await Public_weapons.findAll()
       stringify(weapons)
     } catch (error) {
       throw(error)
@@ -34,7 +34,7 @@ const stringify = (data) => {
 
   const createWeapon = async () => {
     try {
-      const newWeapon = await Choose_weapons.create({
+      const newWeapon = await Public_weapons.create({
         name: 'bat',
         speed: 5,
         power: 4,
@@ -49,13 +49,13 @@ const stringify = (data) => {
 
   const updateWeapon = async () => {
 
-    const update = await Choose_weapons.update({ name: 'hammerNew'}, {where: {name: 'Spiked club'}},)
+    const update = await Public_weapons.update({ name: 'hammerNew'}, {where: {name: 'Spiked club'}},)
       stringify(update)
   }
    
   const deleteWeapon = async (id) => {
     
-    const killArm = await Choose_weapons.destroy({where: {id: 7}})
+    const killArm = await Public_weapons.destroy({where: {id: 7}})
     stringify(killArm, 'weapon is destroyed')
   } 
   
@@ -73,7 +73,7 @@ const stringify = (data) => {
       const arsenal = await Player.findAll({
         include: [
           {
-            model: Choose_weapons,
+            model: Public_weapons,
             as: 'arsenal',
             through: {attributes: []}
           }

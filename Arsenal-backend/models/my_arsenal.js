@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   My_arsenal.init({
-    choose_weaponsId: {
+    public_weaponsId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
