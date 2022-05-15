@@ -1,16 +1,17 @@
 import { useNavigate } from 'react-router-dom'
-// import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 // import { WeaponsContext } from '../components/WeaponsContext'
 import image from '../Sord.png'
 import PublicWeapons from '../components/PublicWeapons'
 import BuildYourWeapon from '../components/BuildYourWeapon'
+import WeaponForm from '../components/WeaponForm'
 
 
 const CrudWeapons = ({ player, authenticated, weapons}) => {
-
-    // const {weapons} = useContext(WeaponsContext)
-
-let navigate = useNavigate()
+    let navigate = useNavigate()
+   
+    const [hidden, setHidden] = useState(true);
+  
     return (player && authenticated) ? (
         <div>
             <h1 className='publicweapons-title'>Public Weapons</h1>
@@ -21,31 +22,37 @@ let navigate = useNavigate()
                 <li>add power</li>
                 <li>Add to public weapons</li>
             </ul>
-        </h1>
-    <div className='weapons-container'>
-       
-        <div className='weapons-left'>
-       
-            {weapons.map((weapon) => (
-                <PublicWeapons
-                weapon={weapon}
-                key={weapon.id}
-            />  
-            ))}
-        </div> 
-       
+            </h1>
       
-        <div className='weapons-right'>
+            <div className='weapons-container'>
+    
+                <div className='weapons-left'>
+        
+                {weapons.map((weapon) => (
+                    <PublicWeapons
+                    weapon={weapon}
+                    key={weapon.id}
+                />  
+                ))}
+                </div> 
        
-            {weapons.map((weapon) => (
-                <BuildYourWeapon
-                weapon={weapon}
-                key={weapon.id}
-            />  
-            ))}
-        </div> 
+       
+                <div className='weapons-right'  onClick={() => setHidden(s => !s)}>  
+                    {weapons.map((weapon) => (
+                        <BuildYourWeapon
+                        weapon={weapon}
+                        key={weapon.id}
+                    />  
+                    ))}
+                </div> 
+                {!hidden ?
+                <div>  
+                      <WeaponForm /> 
+                </div>
+                : null } 
+            </div> 
         </div>                 
-        </div>
+   
     ) : (
         <div className='protected'>
          <img 
