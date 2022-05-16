@@ -1,14 +1,14 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('my_arsenals', {
+    await queryInterface.createTable('arsenal_cruds', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      choose_weaponsId: {
+      crud_weaponId: {
         type: Sequelize.INTEGER
       },
       playerId: {
@@ -25,6 +25,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('my_arsenals');
+    await queryInterface.dropTable('arsenal_cruds');
   }
 };

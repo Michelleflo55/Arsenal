@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Crud_weapon.belongsToMany(models.Player, {
-        through: models.My_arsenal,
-        as: 'my_weapons',
+        through: models.Arsenal_crud,
+        as: 'crud_weapon',
         foreignKey: 'crud_weaponId'
       })
     }

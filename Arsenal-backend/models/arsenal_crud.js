@@ -3,22 +3,22 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class My_arsenal extends Model {
+  class Arsenal_crud extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-
+    
     }
   }
-  My_arsenal.init({
-    choose_weaponsId: {
+  Arsenal_crud.init({
+    crud_weaponId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
-        model: 'choose_weapons',
+        model: 'crud_weapon',
         key: 'id'
       }
     },
@@ -32,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     sequelize,
-    modelName: 'My_arsenal',
-    tableName: 'my_arsenals'
+    modelName: 'Arsenal_crud',
+    tableName: 'arsenal_cruds'
   });
-  return My_arsenal;
+  return Arsenal_crud;
 };

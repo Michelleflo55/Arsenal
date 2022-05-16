@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'playerId'
       }),
       Player.belongsToMany(models.Crud_weapon, {
-        as: 'my_arsenal',
-        through: models.My_arsenal,
+        as: 'arsenal_crud',
+        through: models.Arsenal_crud,
         foreignKey: 'playerId'
       }),
       Player.hasOne(models.Fighter, {foreignKey: 'playerId'})
