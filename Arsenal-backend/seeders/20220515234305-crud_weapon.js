@@ -1,39 +1,62 @@
 'use strict';
+const falso = require('@ngneat/falso')
+
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('crud_weapons', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
+  up: async (queryInterface, Sequelize) => {
+
+    const choose_weapons = [
+      {
+        name: 'Bloody knuckles',
+        speed: falso.randNumber({ min: 2, max: 10 }),
+        power: falso.randNumber({ min: 2, max: 10}),
+        image:'https://i.ibb.co/sCQ3MMn/bloody-handwraps.png' ,
+        damageLevel: falso.randNumber({ min: 70, max: 95 }),       
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
-      name: {
-        type: Sequelize.STRING
+      {
+        name: 'Nunchucks',
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
+        image: 'https://i.ibb.co/jMLB6B7/nunchucks.png',
+        damageLevel: falso.randNumber({ min: 70, max: 95 }),
+        createdAt: new Date(),
+        updatedAt: new Date()
+
       },
-      speed: {
-        type: Sequelize.INTEGER
+      {
+        name: 'Brass knuckles',
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
+        image: 'https://i.ibb.co/v42dFDG/brass-knuckles.png',
+        damageLevel: falso.randNumber({ min: 70, max: 95 }),       
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
-      power: {
-        type: Sequelize.INTEGER
+      {
+        name: 'Spiked club',
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
+        image: 'https://i.ibb.co/ftMKsk3/spiked-club.png',
+        damageLevel: falso.randNumber({ min: 70, max: 95 }),
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
-      damage: {
-        type: Sequelize.INTEGER
-      },
-      image: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      {
+        name: 'Throwing stars',
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
+        image: 'https://i.ibb.co/2YHrx91/throwing-stars.png',
+        damageLevel: falso.randNumber({ min: 70, max: 95 }),       
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
-    });
+
+    ]
+    await queryInterface.bulkInsert('choose_weapons', choose_weapons)
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('crud_weapons');
+
+  down: async (queryInterface, Sequelize) => {
+   await queryInterface.bulkDelete('choose_weapons')
   }
 };

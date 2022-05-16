@@ -7,8 +7,8 @@ module.exports = {
     const choose_weapons = [
       {
         name: 'Bloody knuckles',
-        speed: 10,
-        power: 3,
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
         image:'https://i.ibb.co/sCQ3MMn/bloody-handwraps.png' ,
         damageLevel: falso.randNumber({ min: 70, max: 95 }),       
         createdAt: new Date(),
@@ -16,8 +16,8 @@ module.exports = {
       },
       {
         name: 'Nunchucks',
-        speed: 7,
-        power: 3,
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
         image: 'https://i.ibb.co/jMLB6B7/nunchucks.png',
         damageLevel: falso.randNumber({ min: 70, max: 95 }),
         createdAt: new Date(),
@@ -26,8 +26,8 @@ module.exports = {
       },
       {
         name: 'Brass knuckles',
-        speed: 4,
-        power: 7,
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
         image: 'https://i.ibb.co/v42dFDG/brass-knuckles.png',
         damageLevel: falso.randNumber({ min: 70, max: 95 }),       
         createdAt: new Date(),
@@ -35,8 +35,8 @@ module.exports = {
       },
       {
         name: 'Spiked club',
-        speed: 3,
-        power: 9,
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
         image: 'https://i.ibb.co/ftMKsk3/spiked-club.png',
         damageLevel: falso.randNumber({ min: 70, max: 95 }),
         createdAt: new Date(),
@@ -44,8 +44,8 @@ module.exports = {
       },
       {
         name: 'Throwing stars',
-        speed: 6,
-        power: 4,
+        speed: falso.randNumber({ min: 2, max: 10}),
+        power: falso.randNumber({ min: 2, max: 10}),
         image: 'https://i.ibb.co/2YHrx91/throwing-stars.png',
         damageLevel: falso.randNumber({ min: 70, max: 95 }),       
         createdAt: new Date(),

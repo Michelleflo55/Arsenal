@@ -1,5 +1,5 @@
 'use strict';
-const { Player, Choose_weapons, Crud_weapon } = require('../models')
+const { Player, Choose_weapons} = require('../models')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -8,6 +8,7 @@ module.exports = {
     
     const chooseWeapons = await Choose_weapons.findAll({ raw: true })
     
+
     const my_arsenal = chooseWeapons.map((a) => ({
       playerId: players[Math.floor(Math.random() * players.length)].id,
       choose_weaponsId: chooseWeapons[Math.floor(Math.random() * chooseWeapons.length)].id,
