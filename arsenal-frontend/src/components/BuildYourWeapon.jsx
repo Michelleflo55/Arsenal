@@ -1,12 +1,23 @@
-const BuildYourWeapon= (props) => {
+import { DeleteWeapon } from '../services/WeaponsServices'
+
+const BuildYourWeapon= (props, targetWeapon, setTargetWeapon) => {
+    //  [clicked, isClicked] = useState(false)
+    
+
+    const handleChange = (e) => {
+        setTargetWeapon({...targetWeapon, [e.target.name]: e.target.id})
+        console.log(handleChange)
+    } 
+
     return(
-        <div className='weapons-flex'>
+        <div className='weapons-flex'  >
         
             <h3>{props.weapon.name}</h3>
             <img 
-            src={props.weapon.image}
+            src={props.image}
             style={{maxWidth: "250px"}} 
             className='fighter-image'
+            // onClick={()=> handleChange()}
             />
         </div>
   
@@ -14,9 +25,3 @@ const BuildYourWeapon= (props) => {
     }
 
     export default BuildYourWeapon
-
- 
-
-    //make a createweapon form
-    //add a turnary operator when image is clicked call form
-    //paste into 

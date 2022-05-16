@@ -1,16 +1,25 @@
 import { useNavigate } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
-// import { WeaponsContext } from '../components/WeaponsContext'
+import { WeaponsContext } from '../components/WeaponsContext'
 import image from '../Sord.png'
 import PublicWeapons from '../components/PublicWeapons'
 import BuildYourWeapon from '../components/BuildYourWeapon'
 import WeaponForm from '../components/WeaponForm'
-
+import { GetWeapons } from '../services/WeaponsServices'
 
 const CrudWeapons = ({ player, authenticated, weapons}) => {
     let navigate = useNavigate()
    
     const [hidden, setHidden] = useState(true);
+    const [targetWeapon, setTargetWeapon] = useState(
+        weapons.id,
+        weapons.name = '',
+        weapons.image = ''
+    )
+    const [change, setChange] = useState(false)
+    
+   
+    
   
     return (player && authenticated) ? (
         <div>
@@ -42,12 +51,21 @@ const CrudWeapons = ({ player, authenticated, weapons}) => {
                         <BuildYourWeapon
                         weapon={weapon}
                         key={weapon.id}
+                        image={weapon.image}
+                        
                     />  
                     ))}
                 </div> 
                 {!hidden ?
-                <div>  
-                      <WeaponForm /> 
+                <div> 
+                    {weapons.map((weapon) => ( 
+                      <WeaponForm 
+                       weapon={weapon}
+                       key={weapon.id}
+                       image={weapon.image}
+
+                      /> 
+                    ))}
                 </div>
                 : null } 
             </div> 

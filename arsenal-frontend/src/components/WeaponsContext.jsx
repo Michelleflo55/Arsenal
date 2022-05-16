@@ -5,6 +5,8 @@ const WeaponsContext = createContext()
 const WeaponsProvider = (props) => {
     const [weapons, setWeapons] = useState([])
 
+    
+
     return(
         <WeaponsContext.Provider value={{weapons, setWeapons}} >
             {props.children}
