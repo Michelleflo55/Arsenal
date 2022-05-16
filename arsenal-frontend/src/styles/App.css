@@ -10,8 +10,6 @@ body{
 }
 /* NAV */
 .nav-logo {
-    display: block;
-    justify-content: center;
     align-items: center;
     margin: auto;
     max-width: auto;
@@ -21,12 +19,21 @@ body{
 .nav-bar-divider{
     background-color: white;
     color:black;
+   padding: 2%
 }
 .nav-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 /* SIGN-IN / REGISTER */
 .register-sign-form{
     margin-left: auto;

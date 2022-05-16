@@ -10,14 +10,33 @@ const Nav = ({ authenticated, player, handleLogOut }) => {
         <div className='nav-bar-divider nav-container' >
         <nav className=' register-sign-nav'>
         <h3> Player: {player.username} </h3>
-        {/* <Link onClick={handleLogOut} to="/">Sign Out</Link> */}
+       <div className='flex-container'>
+        <Link onClick={handleLogOut} to="/">Sign Out</Link>
+        
+     
+      
         <a className='nav-fight-link'>
         <Link to="/selectFighter"> View Fighters</Link>
         </a>
+       
         <br />
+     
         <a className='nav-weapons-link'>
         <Link to="/weapons">Weapons</Link>
         </a>
+      
+        <br />
+     
+        <a>
+        <Link to='/CreateArsenal'>Build Arsenal</Link>
+        </a>
+
+        <br />
+    
+        <a>
+        <Link to='allArsenals'> View Arsenals </Link>
+        </a>
+        </div>
         </nav>
         </div>
       

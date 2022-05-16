@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { CreateWeapon } from '../services/WeaponsServices'
 
-const WeaponForm = ( props, {player}) => {
+const WeaponForm = ( props, player) => {
     
     const [addWeaponDamage, setWeaponDamage] = useState({
         speed:1,
-        power:1
+        power:1,
+        // image: props.image,
+        // name: props.name
     })
     
     const postSpeed = (e) =>{ 
@@ -14,23 +16,32 @@ const WeaponForm = ( props, {player}) => {
     const postPower = (e) =>{ 
         setWeaponDamage({ ...addWeaponDamage, power: e.target.value })
       } 
-     
+    // const postImage = (e) => {
+    //     setWeaponDamage({...addWeaponDamage, image: props.image})
+    // }
+    
     const createWeapon = async (weapons) => {
             await CreateWeapon({
-                weaponId:({...addWeaponDamage,}),
+                // weaponId:({...addWeaponDamage,}),
                 speed:addWeaponDamage.speed,
-                power:addWeaponDamage.power
+                power:addWeaponDamage.power,
+                image:props.image,
+                name:props.name
             })
-            setWeaponDamage({...addWeaponDamage, speed: 1, power:1 })
+        console.log(props.weapons.image)
+            // setWeaponDamage({...addWeaponDamage, speed: 1, power:1, name:props.name, image:props.image })
     }
+
+    
 
     return(
         <div>
-            <img src={props.weapon.image} />
-        <form>
+           
+        <form  >
+            {props.weapon.name}
             <input  
                 placeholder="Choose weapon speed" 
-                onChange={postSpeed} 
+                onChange={postSpeed } 
                 type="text" pattern="[0-9]*"
             />
             <input 
@@ -38,10 +49,11 @@ const WeaponForm = ( props, {player}) => {
                 onChange={postPower}
                 type="text" pattern="[0-9]*"
             />
+            
         </form> 
         
         <button onClick={()=>createWeapon()}>Make weapon public</button>  
-
+        <img src={props.weapon.image}  />
         </div>
     )
 }

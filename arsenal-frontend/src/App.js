@@ -2,11 +2,11 @@ import './styles/App.css';
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
 import { Route, Routes } from 'react-router'
-
+import { WeaponsProvider } from './components/WeaponsContext'
+import { ArsenalProvider } from './components/ArsenalContext'
 // import { GetFighters } from './services/FighterServices'
 //services
 import { GetWeapons } from './services/WeaponsServices'
-import { WeaponsProvider } from './components/WeaponsContext'
 
 import Nav from './components/Nav'
 //importingPages
@@ -15,7 +15,8 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import SelectFighters from './pages/SelectFighters'
 import CrudWeapons from './pages/CrudWeapons';
-
+import SendToArsenal from './pages/SendToArsenal'
+import AllArsenals from './pages/AllArsenals'
 
 
 
@@ -68,6 +69,7 @@ function App() {
 
   return (
     <div>
+      <ArsenalProvider>
       <WeaponsProvider>
         <Nav
         authenticated={authenticated}
@@ -100,9 +102,25 @@ function App() {
              weapons={weapons}
             />}
           />
+          <Route path='/CreateArsenal' element={
+            <SendToArsenal
+            player={player}
+             authenticated={authenticated}
+             weapons={weapons}
+            />}
+          /> 
+          <Route path='allArsenals' element={
+            <AllArsenals
+            player={player}
+            authenticated={authenticated}
+            weapons={weapons}
+            />
+            }
+          />
         </Routes>
       </main>
-      </WeaponsProvider>  
+      </WeaponsProvider>
+      </ArsenalProvider>  
     </div>
   );
 }

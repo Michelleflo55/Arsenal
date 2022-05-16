@@ -1,12 +1,12 @@
 
-
 const Home = () => {
 
   
     return (
       <div >
-        <section>
-        </section>
+      
+  
+     
       </div>
     )
   }

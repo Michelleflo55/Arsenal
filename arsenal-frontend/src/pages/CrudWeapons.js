@@ -1,37 +1,31 @@
 import { useNavigate } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
-import { WeaponsContext } from '../components/WeaponsContext'
 import image from '../Sord.png'
 import PublicWeapons from '../components/PublicWeapons'
 import BuildYourWeapon from '../components/BuildYourWeapon'
 import WeaponForm from '../components/WeaponForm'
-import { GetWeapons } from '../services/WeaponsServices'
+import { GetPlayer } from '../services/PlayerServices'
 
 const CrudWeapons = ({ player, authenticated, weapons}) => {
     let navigate = useNavigate()
-   
-    const [hidden, setHidden] = useState(true);
     const [targetWeapon, setTargetWeapon] = useState(
-        weapons.id,
+        // weapons.id,
         weapons.name = '',
         weapons.image = ''
+        
     )
+    const [hidden, setHidden] = useState(true);
     const [change, setChange] = useState(false)
     
-   
-    
+   const getPlayer = async () => {
+       await GetPlayer(localStorage.getItem(player))
+   }
+    //onclick function that changes settarget name & image handleClick
   
     return (player && authenticated) ? (
         <div>
             <h1 className='publicweapons-title'>Public Weapons</h1>
-            <h1  className='buildweapons-title'>Build your weapon
-            <ul className='buildweapons-list'>
-                <li>select a weapon</li>
-                <li>add speed</li>
-                <li>add power</li>
-                <li>Add to public weapons</li>
-            </ul>
-            </h1>
+            
       
             <div className='weapons-container'>
     
@@ -41,36 +35,39 @@ const CrudWeapons = ({ player, authenticated, weapons}) => {
                     <PublicWeapons
                     weapon={weapon}
                     key={weapon.id}
+                    image={weapon.image}
                 />  
                 ))}
                 </div> 
-       
-       
-                <div className='weapons-right'  onClick={() => setHidden(s => !s)}>  
+
+           
+                <div className='weapons-right'  onClick={() => setHidden(s => !s)} target={targetWeapon}>  
+                
+
                     {weapons.map((weapon) => (
                         <BuildYourWeapon
                         weapon={weapon}
                         key={weapon.id}
                         image={weapon.image}
                         
+                        onClick={()=>setTargetWeapon(weapon.id) } //image and name invoked function 
                     />  
-                    ))}
+                    ))} 
                 </div> 
                 {!hidden ?
                 <div> 
-                    {weapons.map((weapon) => ( 
                       <WeaponForm 
-                       weapon={weapon}
-                       key={weapon.id}
-                       image={weapon.image}
+                       weapon={weapons}
+                       key={weapons.id}
+                       image={weapons.image}
 
                       /> 
-                    ))}
+             
                 </div>
                 : null } 
             </div> 
         </div>                 
-   
+    
     ) : (
         <div className='protected'>
          <img 
