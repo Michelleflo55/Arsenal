@@ -20,6 +20,7 @@ const GetWeapon = async ( req, res ) => {
 
 const CreateWeapon = async ( req, res ) => {
     try {
+        console.log(req.body)
         const newWeapon = await Choose_weapons.create(req.body) 
         await newWeapon.save()
         res.send(newWeapon) 

@@ -10,7 +10,7 @@ module.exports = {
         speed: falso.randNumber({ min: 2, max: 10}),
         power: falso.randNumber({ min: 2, max: 10}),
         image:'https://i.ibb.co/sCQ3MMn/bloody-handwraps.png' ,
-        damageLevel: falso.randNumber({ min: 70, max: 95 }),       
+        damageLevel: falso.randNumber({ min: 15, max: 25 }),       
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -19,7 +19,7 @@ module.exports = {
         speed: falso.randNumber({ min: 2, max: 10}),
         power: falso.randNumber({ min: 2, max: 10}),
         image: 'https://i.ibb.co/jMLB6B7/nunchucks.png',
-        damageLevel: falso.randNumber({ min: 70, max: 95 }),
+        damageLevel: falso.randNumber({ min: 15, max: 25 }),
         createdAt: new Date(),
         updatedAt: new Date()
 
@@ -29,7 +29,7 @@ module.exports = {
         speed: falso.randNumber({ min: 2, max: 10}),
         power: falso.randNumber({ min: 2, max: 10}),
         image: 'https://i.ibb.co/v42dFDG/brass-knuckles.png',
-        damageLevel: falso.randNumber({ min: 70, max: 95 }),       
+        damageLevel: falso.randNumber({ min: 15, max: 25 }),       
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -38,7 +38,7 @@ module.exports = {
         speed: falso.randNumber({ min: 2, max: 10}),
         power: falso.randNumber({ min: 2, max: 10}),
         image: 'https://i.ibb.co/ftMKsk3/spiked-club.png',
-        damageLevel: falso.randNumber({ min: 70, max: 95 }),
+        damageLevel: falso.randNumber({ min: 15, max: 25 }),
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -47,7 +47,7 @@ module.exports = {
         speed: falso.randNumber({ min: 2, max: 10}),
         power: falso.randNumber({ min: 2, max: 10}),
         image: 'https://i.ibb.co/2YHrx91/throwing-stars.png',
-        damageLevel: falso.randNumber({ min: 70, max: 95 }),       
+        damageLevel: falso.randNumber({ min: 15, max: 25 }),       
         createdAt: new Date(),
         updatedAt: new Date()
       }

@@ -44,9 +44,21 @@ const DeleteMyArsenal = async ( req, res ) => {
     }
 }
 
+const UpdateArsenal = async(req,res) => {
+    try {
+        await My_arsenal.bulkCreate(req.body, {
+            fields:['playerId', 'choose_weaponsId']
+        })
+        res.send('Arsenal updated with weapon')
+    } catch (error) {
+        
+    }
+}
+
 
 module.exports = {
     GetMyArsenal,
     DeleteWeaponFromArsenal,
-    DeleteMyArsenal
+    DeleteMyArsenal,
+    UpdateArsenal
 }
