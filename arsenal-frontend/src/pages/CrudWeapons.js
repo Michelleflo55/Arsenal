@@ -41,7 +41,7 @@ const CrudWeapons = ({ player, authenticated, weapons}) => {
                 </div> 
 
            
-                <div className='weapons-right'  onClick={() => setHidden(s => !s)} target={targetWeapon}>  
+                <div className='weapons-right '  onClick={() => setHidden(s => !s)} target={targetWeapon}>  
                 
 
                     {weapons.map((weapon) => (
@@ -57,9 +57,11 @@ const CrudWeapons = ({ player, authenticated, weapons}) => {
                 {!hidden ?
                 <div> 
                       <WeaponForm 
+                     
                        weapon={weapons}
                        key={weapons.id}
                        image={weapons.image}
+
 
                       /> 
              

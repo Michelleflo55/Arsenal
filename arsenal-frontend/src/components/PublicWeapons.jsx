@@ -28,6 +28,7 @@ const PublicWeapons = (props, change, setChange, handleWeapons, player) => {
 
     return  (
         <div className='weapons-flex'>
+             <h3>{props.weapon.name}</h3>
              <img 
                 src={props.weapon.image}
                 style={{maxWidth: "250px"}} 
@@ -37,37 +38,39 @@ const PublicWeapons = (props, change, setChange, handleWeapons, player) => {
             clicked ? (
             <div>  
                 {/* <button onClick={()=> deleteWeapon()}>Delete Weapon</button>  */}
-                <h3>{props.weapon.name}</h3>
+                
                 <h3>Speed:{props.weapon.speed}</h3>
                 <h3>Power:{props.weapon.power}</h3>
                 <h3>Damage:{props.weapon.damageLevel}</h3>
                 <h3></h3>
-                <img 
+                {/* <img 
                 src={props.weapon.image}
                 style={{maxWidth: "250px"}} 
                 className='fighter-image'
-                />
+                /> */}
             </div>
             ) :( <div> </div> ) }
             <br />
             { add ? ( 
+                <div>
+               
+               
+                </div>
+            ) : (
                 <div> 
                     <button onClick={() => isClicked(true)}> Preview Weapon Details </button>
-                </div> 
-            ) : (
-                <div>
-                <button onClick={() => {
+
+                    <button onClick={() => {
                   setArsenal([...arsenal, props])
                   isAdded(true)
                   }}> 
-                    Send to Arsenal Preview</button>
-                {/* <button onClick={()=> deleteWeapon()}>Delete Weapon</button> */}
+                    Send to Arsenal Cart</button>
                 </div>
             )}
             
         
         </div>
     )
-    }
+    } 
 
     export default PublicWeapons

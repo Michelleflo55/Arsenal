@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CreateWeapon } from '../services/WeaponsServices'
 
 const WeaponForm = ( props, player) => {
@@ -25,20 +25,24 @@ const WeaponForm = ( props, player) => {
                 // weaponId:({...addWeaponDamage,}),
                 speed:addWeaponDamage.speed,
                 power:addWeaponDamage.power,
-                image:props.image,
+                // image:props.weapons.image,
                 name:props.name
             })
-        console.log(props.weapons.image)
+    
             // setWeaponDamage({...addWeaponDamage, speed: 1, power:1, name:props.name, image:props.image })
     }
-
+    const [renderArsenal, setRenderArsenal] = useState([])
+    const [change, setChange] = useState(false)
+    useEffect(()=>{
+         createWeapon()
+    }, [])
     
 
     return(
         <div>
            
         <form  >
-            {props.weapon.name}
+            
             <input  
                 placeholder="Choose weapon speed" 
                 onChange={postSpeed } 
@@ -53,7 +57,7 @@ const WeaponForm = ( props, player) => {
         </form> 
         
         <button onClick={()=>createWeapon()}>Make weapon public</button>  
-        <img src={props.weapon.image}  />
+        
         </div>
     )
 }

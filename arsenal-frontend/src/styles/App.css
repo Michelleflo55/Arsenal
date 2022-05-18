@@ -9,6 +9,9 @@ body{
 
 }
 /* NAV */
+.nav-fight-link{
+    display: inline-block;
+ }
 .nav-logo {
     align-items: center;
     margin: auto;
@@ -139,9 +142,6 @@ input{
     /* background-color: #0000009d;
     border-radius: 30px;
     padding-top:30px; */
-   
-
-
 }
 .buildweapons-title{
     text-align: end;
@@ -162,13 +162,20 @@ input{
     gap:2px
 }
 
-.weapons-flex:hover{
+.weapons-flex:hover, .build-weapons-flex:hover{
     box-shadow: 0 0 10px 0 #a50000 inset, 0 0 20px 2px #ffffff;
     border: 3px solid #e60000;
     transform: scale(1.2);
    
 }
 
-.nav-fight-link{
-   display: inline-block;
+.build-weapons-flex{
+     border: 3px solid rgb(255, 0, 43);
+    border-radius: 50px;
+    width:fit-content;
+    transition: all .2s ease-in-out; 
+    background-color: rgba(0, 0, 0, 0.759);
+    color:white ;
+    font-size: 20px;
+    max-height: fit-content;
 }

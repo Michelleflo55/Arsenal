@@ -15,6 +15,7 @@ const AllArsenals = ( {player, authenticated } ) => {
             setArsenals(data)
         }
         viewArsenals()
+        console.log(arsenals)
     }, [])
 
     return ( player && authenticated ) ? (
@@ -25,8 +26,8 @@ const AllArsenals = ( {player, authenticated } ) => {
                 arsenals.map((arsenal) => (
                   <Arsenal 
                   arsenal={arsenal}
-                  key={arsenal.id}
-                  unsername={arsenal.username}
+                  key={arsenal.id }
+                  username={arsenal.player}
                   />  
                 ))
                 }

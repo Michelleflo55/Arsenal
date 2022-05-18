@@ -30,7 +30,7 @@ const SendToArsenal = ( {player, authenticated}, weapons ) => {
     const getArsenal = () => {
         let arr=[]
         load.map((newWeapon) => {
-            arr.push({playerId: player.id, weaponId: newWeapon})
+            arr.push({playerId: player.id, weaponId: newWeapon.weaponId, weaponImage:newWeapon.image})
         })
         setArsenalDetails(arr)
         pushArsenal()
@@ -67,15 +67,18 @@ const SendToArsenal = ( {player, authenticated}, weapons ) => {
                 renderArsenal={renderArsenal}
                 key={renderArsenal.id}
                 name={renderArsenal.name}
+                image={renderArsenal.image}
                 change={change}
                 setChange={setChange}
                 />
             </div>
             <div>
                 <button onClick={() => setArsenal([])} > Change Weapon </button>
+                </div>
+                <div>
                 <button onClick={() => {
                     updateArsenal()
-                    setArsenal([])}}> </button>
+                    setArsenal([])}}> Update Arsenal</button>
             </div>
             <div>
                 {arsenal.map((weapon) => (
