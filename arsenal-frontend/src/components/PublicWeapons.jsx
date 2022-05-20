@@ -1,7 +1,7 @@
 
 import { useState, useContext, useEffect} from 'react'
 import {ArsenalContext} from './ArsenalContext'
-import { DeleteWeapon, GetWeapons,  } from '../services/WeaponsServices'
+import { DeleteWeapon, GetWeapons, UpdateWeapon  } from '../services/WeaponsServices'
 
 
 const PublicWeapons = (props, player) => {
@@ -11,22 +11,26 @@ const PublicWeapons = (props, player) => {
     const [clicked, isClicked] = useState(false)
     const { arsenal } = useContext(ArsenalContext)
     const { setArsenal } = useContext(ArsenalContext)
-    // const [targeted, setTargeted] = useState(false)
-    const [weapons, setWeapons] = useState([])
-    const [targeted, setTargeted] = useState(false)
+    const [speed, setSpeed] = useState({
+      speed: ''
+    })
     
-    const deleteWeapon = async (banana) => {
-      
+    const deleteWeapon = async (banana) => { 
       const data = await DeleteWeapon({
-        banana ,
-        
-        
+        banana , 
       }) 
       console.log(banana)
       GetWeapons()
     }
-
-    
+    const updateWeapon = async (banana) => {
+      const data = await UpdateWeapon({
+        banana
+      })
+      console.log(speed)
+    }
+    const updateSpeed = (e) =>{ 
+      setSpeed({ ...speed, speed: e.target.value })
+    }
 
     return  (
       <div className='weapons-flex'>
@@ -56,7 +60,9 @@ const PublicWeapons = (props, player) => {
                     <br />
                     <button className='buttons' onClick={() => deleteWeapon((props.weapon.id))}> Delete weapon</button>
                     < br />
-                    <button className='buttons'> Update speed/power </button>
+                    
+                    <button className='buttons' onClick={() => updateWeapon(props.weapon.id)}> Update speed </button>
+                    <input  value={speed.speed} placeholder='enter new speed' onChange={updateSpeed} />
                     <br />
                     <button className='buttons'
                     onClick={() => {
