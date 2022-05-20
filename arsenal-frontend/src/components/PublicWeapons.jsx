@@ -11,8 +11,9 @@ const PublicWeapons = (props, player) => {
     const [clicked, isClicked] = useState(false)
     const { arsenal } = useContext(ArsenalContext)
     const { setArsenal } = useContext(ArsenalContext)
+   
     const [speed, setSpeed] = useState({
-      speed: ''
+      speed: Number
     })
     
     const deleteWeapon = async (banana) => { 
@@ -25,12 +26,20 @@ const PublicWeapons = (props, player) => {
     const updateWeapon = async (banana) => {
       const data = await UpdateWeapon({
         banana
-      })
+      }, setSpeed)
       console.log(speed)
+      
     }
     const updateSpeed = (e) =>{ 
       setSpeed({ ...speed, speed: e.target.value })
     }
+
+    useEffect(() => {
+      
+      updateWeapon(speed)
+  }, [] )
+
+
 
     return  (
       <div className='weapons-flex'>
@@ -61,7 +70,7 @@ const PublicWeapons = (props, player) => {
                     <button className='buttons' onClick={() => deleteWeapon((props.weapon.id))}> Delete weapon</button>
                     < br />
                     
-                    <button className='buttons' onClick={() => updateWeapon(props.weapon.id)}> Update speed </button>
+                    <button className='buttons' onClick={() => updateWeapon(props.weapon.id)} > Update speed </button>
                     <input  value={speed.speed} placeholder='enter new speed' onChange={updateSpeed} />
                     <br />
                     <button className='buttons'
