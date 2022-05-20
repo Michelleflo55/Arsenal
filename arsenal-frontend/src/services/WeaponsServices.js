@@ -29,8 +29,9 @@ export const CreateWeapon = async (data) => {
 }
 
 export const UpdateWeapon = async (data) => {
+    console.log(data.banana)
     try {
-        const res = await Client.put(`/weapons/${data.choose_weaponsId}`, data)
+        const res = await Client.put(`/weapons/${data.banana}`, data)
         return res.data
     } catch (error) {
       throw(error)  

@@ -133,7 +133,7 @@ input{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 36vw;
+    max-width: 25vw;
     width:fit-content;
     -ms-flex-align:start;
     justify-content: flex-start;
@@ -155,7 +155,7 @@ input{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 36vw;
+    max-width: 25vw;
     width:fit-content;
     justify-content: flex-end;
     /* margin-left: 2% */
@@ -176,6 +176,28 @@ input{
     transition: all .2s ease-in-out; 
     background-color: rgba(0, 0, 0, 0.759);
     color:white ;
-    font-size: 20px;
+    font-size: 15px;
     max-height: fit-content;
+}
+
+.buildWeapon-image{
+    height:300px;
+    width:fit-content
+}
+
+.buttons{
+    width: 35%;
+   
+    text-align: center;
+    color: black;
+ 
+    font-weight: 600;
+    margin: auto;
+    cursor: pointer;
+    display: inline-block; 
+    font-size: 10px; 
+}
+.buttons:hover{
+    box-shadow: 0 0 10px 0 #ff0000 inset, 0 0 20px 2px #ffffff;
+    border: 3px solid #ff0000;
 }

@@ -1,7 +1,7 @@
 
 import { useState, useContext, useEffect} from 'react'
 import {ArsenalContext} from './ArsenalContext'
-import { DeleteWeapon, GetWeapons } from '../services/WeaponsServices'
+import { DeleteWeapon, GetWeapons,  } from '../services/WeaponsServices'
 
 
 const PublicWeapons = (props, player) => {
@@ -26,6 +26,8 @@ const PublicWeapons = (props, player) => {
       GetWeapons()
     }
 
+    
+
     return  (
       <div className='weapons-flex'>
              <h3>{props.weapon.name}</h3>
@@ -33,17 +35,13 @@ const PublicWeapons = (props, player) => {
                 src={props.weapon.image}
                 style={{maxWidth: "250px"}} 
                 className='fighter-image'
-                />
+              />
         {
             clicked ? (
             <div>  
-                {/* <button onClick={()=> deleteWeapon()}>Delete Weapon</button>  */}
-                
                 <h3>Speed:{props.weapon.speed}</h3>
                 <h3>Power:{props.weapon.power}</h3>
                 <h3>Damage:{props.weapon.damageLevel}</h3>
-                <h3></h3>
-               
             </div>
             ) :( <div> </div> ) }
             <br />
@@ -54,9 +52,14 @@ const PublicWeapons = (props, player) => {
                 </div>
             ) : (
                 <div> 
-                    <button onClick={() => isClicked(true)}> Preview Weapon Details </button>
-                    <button onClick={() => deleteWeapon((props.weapon.id))}> Delete weapon</button>
-                    <button onClick={() => {
+                    <button className='buttons' onClick={() => isClicked(true)} > Preview Weapon Details </button>
+                    <br />
+                    <button className='buttons' onClick={() => deleteWeapon((props.weapon.id))}> Delete weapon</button>
+                    < br />
+                    <button className='buttons'> Update speed/power </button>
+                    <br />
+                    <button className='buttons'
+                    onClick={() => {
                   setArsenal([...arsenal, props])
                   isAdded(true)
                   }}> 

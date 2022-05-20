@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
 import image from '../Sord.png'
+import build from '../buildWeapon.png'
+import publicWeapons from '../publicWeapons.png'
 import PublicWeapons from '../components/PublicWeapons'
 import BuildYourWeapon from '../components/BuildYourWeapon'
 import WeaponForm from '../components/WeaponForm'
@@ -24,8 +26,6 @@ const CrudWeapons = ({ player, authenticated, weapons}) => {
   
     return (player && authenticated) ? (
         <div>
-            <h1 className='publicweapons-title'>Public Weapons</h1>
-            
       
             <div className='weapons-container'>
     
@@ -40,29 +40,26 @@ const CrudWeapons = ({ player, authenticated, weapons}) => {
                 ))}
                 </div> 
 
-           
+                <h3> 
+                    <img src={publicWeapons} className='buildWeapon-image' />
+                    <br />
+                    <img src={build} className='buildWeapon-image' /> 
+                </h3>
                 <div className='weapons-right '  onClick={() => setHidden(s => !s)} target={targetWeapon}>  
-                
 
                     {weapons.map((weapon) => (
                         <BuildYourWeapon
                         weapon={weapon}
                         key={weapon.id}
-                        image={weapon.image}
-                        
-                        onClick={()=>setTargetWeapon(weapon.id) } //image and name invoked function 
+                        image={weapon.image}  
+                        onClick={()=>setTargetWeapon(weapon.id) }
                     />  
                     ))} 
                 </div> 
                 {!hidden ?
                 <div> 
                       <WeaponForm 
-                     
                        weapon={weapons}
-                       key={weapons.id}
-                       image={weapons.image}
-
-
                       /> 
              
                 </div>
