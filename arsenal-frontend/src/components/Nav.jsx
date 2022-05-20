@@ -28,7 +28,7 @@ const Nav = ({ authenticated, player, handleLogOut }) => {
         <br />
      
         <a>
-        <Link to='/CreateArsenal'>Build Arsenal</Link>
+        <Link to='/createArsenal'>Arsenal Checkout</Link>
         </a>
 
         <br />

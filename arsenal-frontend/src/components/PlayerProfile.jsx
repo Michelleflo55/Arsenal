@@ -1,49 +1,50 @@
-import { DeleteWeapFromArs } from '../services/ArsenalServices'
+import { DeleteWeapFromArs } from "../services/ArsenalServices"
 import { useEffect, useState } from 'react'
 
-const PlayerProfile = ({ renderArsenal, change, setChange, props, weapons, player }) => {
-    const [name, setName] = useState('')
+const PlayerProfile = ({ renderArsenal, change, setChange }) => {
+    const [weapon, setWeapon] = useState('')
     const [targeted, setTargeted] = useState(false)
 
-    const removeWeapon = async () => {
+    const deleteArsenalItem = async () => {
         const data = await DeleteWeapFromArs({
-            playerId: localStorage.getItem('myArsenal'),
-            choose_weaponId: name.id
+            playerId: localStorage.getItem('playerId'),
+            weapon: weapon
         })
         setTargeted(false)
         setChange(true)
     }
-
-    const targetWeapon = () => {
-        if (name.propsId  !== ''){
-           
+    const targetArsenalItem = () => {
+        if (weapon.choose_weaponId !== ''){
+            deleteArsenalItem()
         }
     }
 
     useEffect(() => {
         if (targeted) {
-            targetWeapon()
+            targetArsenalItem()
         }
-        console.log('banana')
     })
 
     return(
         <div>
-            <h1>My Arsenal</h1>
-            <div>{ renderArsenal.map((newArsenal) => (
-                <div key={newArsenal.id}>
-                    <li>{newArsenal.player.username}</li> 
-                    <image src={newArsenal.image} />
+            <h3> Player:<span >{localStorage.getItem('player')} </span></h3>
+            <div>
+                <h3>My Arsenal</h3>
+                {renderArsenal.map((newArsenal) => (
+                  <div key={newArsenal.id}>
+                    <li>
+                      {newArsenal.weapon}
+                    </li>
                     <br />
-                    <button 
-                    onClick={() => {setName(newArsenal.id)
-                    setTargeted(true)    
-                    }}> Remove Weapon </button>
-                </div>
-            ))}
+                    <button onClick={() => {setWeapon(newArsenal.id)
+                    setTargeted(true)
+                    }}> Delete Weapon from Arsenal </button>  
+                  </div>      
+                ))}
+            </div>
 
-          </div>
-        </div>                
+        </div>
     )
 }
-export default PlayerProfile
+
+export default PlayerProfile 

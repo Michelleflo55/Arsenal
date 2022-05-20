@@ -1,33 +1,33 @@
-import { DeleteWeapon } from '../services/WeaponsServices'
-import { useState, useContext} from 'react'
-import {ArsenalContext} from './ArsenalContext'
 
-const PublicWeapons = (props, change, setChange, handleWeapons, player) => {
+import { useState, useContext, useEffect} from 'react'
+import {ArsenalContext} from './ArsenalContext'
+import { DeleteWeapon, GetWeapons } from '../services/WeaponsServices'
+
+
+const PublicWeapons = (props, player) => {
     
-    const [targeted, setTargeted] = useState(false)
-    
+   
     const [add, isAdded] = useState(false)
     const [clicked, isClicked] = useState(false)
     const { arsenal } = useContext(ArsenalContext)
     const { setArsenal } = useContext(ArsenalContext)
-
-
-
-   //delete weapon
-   
-
-    // const deleteWeapon = async() => {
-    //     await DeleteWeapon({
-    //         playerId:localStorage.getItem(player),
-    //         weaponName: name
-    //     })
-    // }
-
-
-
+    // const [targeted, setTargeted] = useState(false)
+    const [weapons, setWeapons] = useState([])
+    const [targeted, setTargeted] = useState(false)
+    
+    const deleteWeapon = async (banana) => {
+      
+      const data = await DeleteWeapon({
+        banana ,
+        
+        
+      }) 
+      console.log(banana)
+      GetWeapons()
+    }
 
     return  (
-        <div className='weapons-flex'>
+      <div className='weapons-flex'>
              <h3>{props.weapon.name}</h3>
              <img 
                 src={props.weapon.image}
@@ -43,11 +43,7 @@ const PublicWeapons = (props, change, setChange, handleWeapons, player) => {
                 <h3>Power:{props.weapon.power}</h3>
                 <h3>Damage:{props.weapon.damageLevel}</h3>
                 <h3></h3>
-                {/* <img 
-                src={props.weapon.image}
-                style={{maxWidth: "250px"}} 
-                className='fighter-image'
-                /> */}
+               
             </div>
             ) :( <div> </div> ) }
             <br />
@@ -59,7 +55,7 @@ const PublicWeapons = (props, change, setChange, handleWeapons, player) => {
             ) : (
                 <div> 
                     <button onClick={() => isClicked(true)}> Preview Weapon Details </button>
-
+                    <button onClick={() => deleteWeapon((props.weapon.id))}> Delete weapon</button>
                     <button onClick={() => {
                   setArsenal([...arsenal, props])
                   isAdded(true)
@@ -74,3 +70,7 @@ const PublicWeapons = (props, change, setChange, handleWeapons, player) => {
     } 
 
     export default PublicWeapons
+
+
+
+    

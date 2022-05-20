@@ -4,14 +4,11 @@ import { useState } from 'react'
 import { useLinkClickHandler } from 'react-router-dom'
 
 const BuildYourWeapon= (props, targetWeapon, setTargetWeapon) => {
-    //  [clicked, isClicked] = useState(false)
+    
         const [hideNewWeapon, setHideNewWeapon] = useState([])
         const [isClicked, SetIsClicked]= useState(false)
 
-    // const handleChange = (e) => {
-    //     setTargetWeapon({...targetWeapon, [e.target.speed]: e.target.power})
-    //     console.log(handleChange)
-    // } 
+  
     const hideWeapon = () => {
         if(hideNewWeapon > 4 && isClicked(true) ){
         SetIsClicked()       

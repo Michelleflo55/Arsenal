@@ -38,9 +38,10 @@ export const UpdateWeapon = async (data) => {
 }
 
 export const DeleteWeapon = async (data) => {
-    
+    console.log(data.banana)
     try {
-       const res = await Client.delete(`/weapons/${data.playerId}/${data.choose_weaponsId}`)
+       const res = await Client.delete(`/weapons/${data.banana}`)
+       console.log(res.data)
        return res.data
     } catch (error) {
         throw(error)

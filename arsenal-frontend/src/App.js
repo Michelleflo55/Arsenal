@@ -15,8 +15,8 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import SelectFighters from './pages/SelectFighters'
 import CrudWeapons from './pages/CrudWeapons';
-import SendToArsenal from './pages/SendToArsenal'
-import AllArsenals from './pages/AllArsenals'
+import ArsenalCheckout from './pages/ArsenalCheckout';
+
 
 
 
@@ -62,7 +62,6 @@ function App() {
     const handleWeapons = async () => {
       const data = await GetWeapons()
       setWeapons(data)
-      console.log(data)
     }
     handleWeapons()
   }, [])
@@ -97,25 +96,17 @@ function App() {
           />
           <Route path='/weapons' element={
             <CrudWeapons
-             player={player}
-             authenticated={authenticated}
-             weapons={weapons}
+              player={player}
+              authenticated={authenticated}
+              weapons={weapons}
             />}
           />
-          <Route path='/CreateArsenal' element={
-            <SendToArsenal
-            player={player}
-             authenticated={authenticated}
-             weapons={weapons}
-            />}
-          /> 
-          <Route path='allArsenals' element={
-            <AllArsenals
-            player={player}
-            authenticated={authenticated}
-            weapons={weapons}
+          <Route path='/createArsenal' element={
+            <ArsenalCheckout
+              player={player}
+              authenticated={authenticated}
             />
-            }
+          }
           />
         </Routes>
       </main>
